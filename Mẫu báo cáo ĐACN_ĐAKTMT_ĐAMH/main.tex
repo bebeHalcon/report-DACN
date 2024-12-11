@@ -123,7 +123,7 @@ morekeywords={}
 		\tiny \bf 
 	\end{tabular}  }
 \fancyfoot{} % clear all footer fields
-\fancyfoot[L]{\scriptsize  Báo cáo Đồ án chuyên ngành/Đồ án kỹ thuật máy tính/Đồ án môn học (CO4029/CO4041/...) - HK1 2023 - 2024}
+\fancyfoot[L]{\scriptsize  Báo cáo Đồ án chuyên ngành (CO4029) - HK1 2024 - 2025}
 \fancyfoot[R]{\scriptsize  Trang {\thepage}/\pageref{LastPage}}
 
 \renewcommand{\headrulewidth}{0.3pt}
@@ -186,24 +186,26 @@ morekeywords={}
 \begin{tabular}{c}
 \multicolumn{1}{c}{\textbf{{\LARGE BÁO CÁO}}}\\
 \\{\textbf{{\LARGE ĐỒ ÁN CHUYÊN NGÀNH}}}
-\\{\textbf{{\LARGE ĐỒ ÁN KỸ THUẬT MÁY TÍNH}}}
-\\{\textbf{{\LARGE ĐỒ ÁN MÔN HỌC}}}
-\\ \textit{(SV chọn tên môn học cho phù hợp)}
+% \\{\textbf{{\LARGE ĐỒ ÁN KỸ THUẬT MÁY TÍNH}}}
+% \\{\textbf{{\LARGE ĐỒ ÁN MÔN HỌC}}}
+% \\ \textit{(SV chọn tên môn học cho phù hợp)}
 \\
 \\
 \textbf{\LARGE TÊN ĐỀ TÀI}
 \\ \textit{(size tuỳ theo số lượng từ)}
 
-\\ \vspace{0.5cm} {\Large NGÀNH: ................................}
+\\ \vspace{0.5cm} {\Large NGÀNH: KHOA HỌC MÁY TÍNH}
 \end{tabular}
 \end{center}
 \vspace{0.5cm}
+
+
 \begin{table}[h]
 \begin{tabular}{rll}
 \hspace{6 cm} &  \textbf{\Large HỘI ĐỒNG:} {\Large ................................}
 \\
 \\
-\hspace{6 cm} &   \textbf{\Large GVHD:} {\Large ................................}
+\hspace{6 cm} &   \textbf{\Large GVHD:} {\Large VƯƠNG BÁ THỊNH}
 \\
 \\
 \hspace{6 cm}  &   \textbf{\Large TKHĐ:} {\Large ................................}
@@ -213,24 +215,27 @@ morekeywords={}
 \hspace{6 cm} &     \textbf{$\;$ $\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$ \Large ---o0o---} 
 \\
 \\
-\hspace{6 cm} &   \textbf{\Large SVTH1:} {\Large .....Họ \& Tên...........(MSSV)}
+\hspace{6 cm} &   \textbf{\Large SVTH1:} {\Large Trần Đan Huy - MSSV}
 \\
 \\
-\hspace{6 cm}&   \textbf{\Large SVTH2:}  {\Large .....Họ \& Tên...........(MSSV)}
+\hspace{6 cm}&   \textbf{\Large SVTH2:}  {\Large Lê Quang Hiển - MSSV}
 \\
 \\
-\hspace{6 cm} &   \textbf{\Large SVTH3:}  {\Large .....Họ \& Tên...........(MSSV)}
+\hspace{6 cm} &   \textbf{\Large SVTH3:}  {\Large Trần Thiện Nhân - 2111913}
 \\
 \\
+
 \end{tabular}
 \end{table}
+
 \vspace{0.5cm}
 \begin{center}
-{\Large TP. HỒ CHÍ MINH, THÁNG/NĂM (BẢO VỆ) }
+{\Large TP. HỒ CHÍ MINH, 12/2024}
 \end{center}
 \end{titlepage}
 %\thispagestyle{empty}
 \newpage
+
 %%%%%%%%%%%%%%%%%INTRO%%%%%%%%%%%%%%%%%%%
 \input{Intro/LoiCamOn}
 \input{Intro/LoiCamDoan}
@@ -245,17 +250,18 @@ morekeywords={}
 \setcounter{page}{1}
 
 %%%%%%%%%%%%%%%%%CONTENTS%%%%%%%%%%%%%%%%%%%
-\input{Contents/GioiThieu}
+\input{Contents/GioiThieuDeTai}
+\newpage
+\input{Contents/CoSoThietKe}
 \newpage
 \input{Contents/CoSoLyThuyet}
 \newpage
-\input{Contents/YeuCauHeThong}
+\input{Contents/PhanTichHeThong}
 \newpage
-\input{Contents/DacTaChiTietCacUseCase}
-\newpage
-\input{Contents/PhanTichThietKeHeThong}
+\input{Contents/ThietKeHeThong}
 \newpage
 \input{Contents/TongKet}
+
 %%%%%%%%%%%%%%%%%OUTRO%%%%%%%%%%%%%%%%%%%
 \input{Outro/TaiLieuThamKhao}
 \newpage
