@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.11)  12 DEC 2024 10:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.11)  12 DEC 2024 16:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1681,7 +1681,13 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.20 
-      [1 <./Images/StatsMostLanguage.png>])
+      [1 <./Images/StatsMostLanguage.png>]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
+1.
+
+(C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+))
 
 File: Images/hcmut.png Graphic file (type png)
 <use Images/hcmut.png>
@@ -1693,7 +1699,8 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.254 \newpage
-               [2] (Contents/CoSoThietKe.tex)
+               [2{C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/
+base/8r.enc}] (Contents/CoSoThietKe.tex)
 
 File: Images/hcmut.png Graphic file (type png)
 <use Images/hcmut.png>
@@ -1746,20 +1753,21 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 90F3B1312330EB5FC346F4FD25D5B2B5;6334.
  ) 
 Here is how much of TeX's memory you used:
- 29677 strings out of 473682
- 562601 string characters out of 5719215
+ 29707 strings out of 473682
+ 563090 string characters out of 5719215
  1117610 words of memory out of 5000000
- 52076 multiletter control sequences out of 15000+600000
- 602593 words of font info for 79 fonts, out of 8000000 for 9000
+ 52100 multiletter control sequences out of 15000+600000
+ 603985 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,24n,115p,1013b,488s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmb8v.
+pfb><C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.
 pfb><C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmr8
 v.pfb><C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utm
 ri8v.pfb>
-Output written on main.pdf (15 pages, 242501 bytes).
+Output written on main.pdf (15 pages, 247409 bytes).
 PDF statistics:
- 292 PDF objects out of 1000 (max. 8388607)
+ 298 PDF objects out of 1000 (max. 8388607)
  53 named destinations out of 1000 (max. 500000)
  303 words of extra memory for PDF output out of 10000 (max. 10000000)
 
