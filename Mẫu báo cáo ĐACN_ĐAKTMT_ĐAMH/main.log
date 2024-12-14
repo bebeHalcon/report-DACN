@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.11)  12 DEC 2024 10:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.11)  14 DEC 2024 09:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1212,6 +1212,14 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
+(C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count351
+\float@exts=\toks53
+\float@box=\box139
+\@float@everytoks=\toks54
+\@floatcapt=\box140
+)
 (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -1241,11 +1249,11 @@ decorations.code.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen339
 \pgfdecoratedinputsegmentremainingdistance=\dimen340
 \pgf@decorate@distancetomove=\dimen341
-\pgf@decorate@repeatstate=\count351
+\pgf@decorate@repeatstate=\count352
 \pgfdecorationsegmentamplitude=\dimen342
 \pgfdecorationsegmentlength=\dimen343
 )
-\tikz@lib@dec@box=\box139
+\tikz@lib@dec@box=\box141
 )
 (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorat
 ions\pgflibrarydecorations.pathmorphing.code.tex))
@@ -1260,8 +1268,8 @@ ions\pgflibrarydecorations.shapes.code.tex)))
 (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@layerbox@background=\box140
-\pgf@layerboxsaved@background=\box141
+\pgf@layerbox@background=\box142
+\pgf@layerboxsaved@background=\box143
 )
 (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibrarycalc.code.tex
@@ -1285,7 +1293,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count352
+\c@section@level=\count353
 )
 (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.s
 ty
@@ -1293,8 +1301,8 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
 \@linkdim=\dimen344
-\Hy@linkcounter=\count353
-\Hy@pagecounter=\count354
+\Hy@linkcounter=\count354
+\Hy@pagecounter=\count355
  (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2024-11-05 v7.01l Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -1302,7 +1310,7 @@ Now handling font encoding PD1 ...
 ) (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count355
+\Hy@SavedSpaceFactor=\count356
  (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2024-11-05 v7.01l Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -1316,7 +1324,7 @@ Package hyperref Info: Plain pages OFF on input line 4172.
 Package hyperref Info: Backreferencing OFF on input line 4177.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4424.
-\c@Hy@tempcnt=\count356
+\c@Hy@tempcnt=\count357
 
 (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
@@ -1333,7 +1341,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count357
+\Fld@menulength=\count358
 \Field@Width=\dimen346
 \Fld@charsize=\dimen347
 Package hyperref Info: Hyper figures OFF on input line 6042.
@@ -1348,9 +1356,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6072.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count358
-\c@Item=\count359
-\c@Hfootnote=\count360
+\Hy@abspage=\count359
+\c@Item=\count360
+\c@Hfootnote=\count361
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
@@ -1361,9 +1369,9 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\HyAnn@Count=\count361
-\Fld@listcount=\count362
-\c@bookmark@seq@number=\count363
+\HyAnn@Count=\count362
+\Fld@listcount=\count363
+\c@bookmark@seq@number=\count364
 
 (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
 echeck.sty
@@ -1381,17 +1389,17 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 Package hyperref Info: Option `colorlinks' set `true' on input line 40.
 
 (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count364
-\lst@gtempboxa=\box142
-\lst@token=\toks53
-\lst@length=\count365
+\lst@mode=\count365
+\lst@gtempboxa=\box144
+\lst@token=\toks55
+\lst@length=\count366
 \lst@currlwidth=\dimen348
-\lst@column=\count366
-\lst@pos=\count367
+\lst@column=\count367
+\lst@pos=\count368
 \lst@lostspace=\dimen349
 \lst@width=\dimen350
-\lst@newlines=\count368
-\lst@lineno=\count369
+\lst@newlines=\count369
+\lst@lineno=\count370
 \lst@maxwidth=\dimen351
 
 (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
@@ -1399,18 +1407,18 @@ File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
 )
 (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\c@lstnumber=\count370
-\lst@skipnumbers=\count371
-\lst@framebox=\box143
+\c@lstnumber=\count371
+\lst@skipnumbers=\count372
+\lst@framebox=\box145
 )
 (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2024/09/23 1.10c listings configuration
 ))
 Package: listings 2024/09/23 1.10c (Carsten Heinz)
-\c@theorem=\count372
-\c@property=\count373
-\c@proposition=\count374
-\c@exer=\count375
+\c@theorem=\count373
+\c@property=\count374
+\c@proposition=\count375
+\c@exer=\count376
 
 Package geometry Warning: Over-specification in `h'-direction.
     `width' (455.24408pt) is ignored.
@@ -1428,7 +1436,7 @@ File: lstlang2.sty 2024/09/23 1.10c listings language file
 (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang3.sty
 File: lstlang3.sty 2024/09/23 1.10c listings language file
 )
-\c@subsubsubsection=\count376
+\c@subsubsubsection=\count377
 
 
 Package geometry Warning: Over-specification in `h'-direction.
@@ -1470,17 +1478,17 @@ LaTeX Font Info:    ... okay on input line 158.
 (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count377
+\scratchcounter=\count378
 \scratchdimen=\dimen352
-\scratchbox=\box144
-\nofMPsegments=\count378
-\nofMParguments=\count379
-\everyMPshowfont=\toks54
-\MPscratchCnt=\count380
+\scratchbox=\box146
+\nofMPsegments=\count379
+\nofMParguments=\count380
+\everyMPshowfont=\toks56
+\MPscratchCnt=\count381
 \MPscratchDim=\dimen353
-\MPnumerator=\count381
-\makeMPintoPDFobject=\count382
-\everyMPtoPDFconversion=\toks55
+\MPnumerator=\count382
+\makeMPintoPDFobject=\count383
+\everyMPtoPDFconversion=\toks57
 )
 (C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -1493,6 +1501,7 @@ fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: rotating package is loaded.
@@ -1537,8 +1546,8 @@ Package hyperref Info: Link coloring ON on input line 158.
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-\c@lstlisting=\count383
-<Images/hcmut.png, id=146, 514.3215pt x 491.9178pt>
+\c@lstlisting=\count384
+<Images/hcmut.png, id=158, 514.3215pt x 491.9178pt>
 File: Images/hcmut.png Graphic file (type png)
 <use Images/hcmut.png>
 Package pdftex.def Info: Images/hcmut.png  used on input line 181.
@@ -1645,7 +1654,104 @@ l.245 \newpage
 
 
 [3] (Contents/GioiThieuDeTai.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--14
+<Images/StatsMostLanguage.png, id=242, 1003.75pt x 547.04375pt>
+File: Images/StatsMostLanguage.png Graphic file (type png)
+<use Images/StatsMostLanguage.png>
+Package pdftex.def Info: Images/StatsMostLanguage.png  used on input line 12.
+(pdftex.def)             Requested size: 455.24411pt x 248.1123pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--20
+
+ []
+
+
+
+File: Images/hcmut.png Graphic file (type png)
+<use Images/hcmut.png>
+Package pdftex.def Info: Images/hcmut.png  used on input line 20.
+(pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.20 
+      [1 <./Images/StatsMostLanguage.png>]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
+1.
+
+(C:\Users\ADMIN\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+))
+
+File: Images/hcmut.png Graphic file (type png)
+<use Images/hcmut.png>
+Package pdftex.def Info: Images/hcmut.png  used on input line 254.
+(pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.254 \newpage
+               [2{C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/
+base/8r.enc}] (Contents/CoSoThietKe.tex
+<Images/Overall.png, id=254, 722.7pt x 407.27156pt>
+File: Images/Overall.png Graphic file (type png)
+<use Images/Overall.png>
+Package pdftex.def Info: Images/Overall.png  used on input line 6.
+(pdftex.def)             Requested size: 455.24411pt x 256.55136pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--9
+
+ []
+
+
+
+File: Images/hcmut.png Graphic file (type png)
+<use Images/hcmut.png>
+Package pdftex.def Info: Images/hcmut.png  used on input line 20.
+(pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.20 
+      [3 <./Images/Overall.png>])
+
+File: Images/hcmut.png Graphic file (type png)
+<use Images/hcmut.png>
+Package pdftex.def Info: Images/hcmut.png  used on input line 256.
+(pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
+[4] (Contents/CoSoLyThuyet.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--7
+
+ []
+
+<Images/AGameSuck.png, id=265, 644.4075pt x 377.91188pt>
+File: Images/AGameSuck.png Graphic file (type png)
+<use Images/AGameSuck.png>
+Package pdftex.def Info: Images/AGameSuck.png  used on input line 17.
+(pdftex.def)             Requested size: 455.24411pt x 266.98724pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--20
+
+ []
+
+
+
+File: Images/hcmut.png Graphic file (type png)
+<use Images/hcmut.png>
+Package pdftex.def Info: Images/hcmut.png  used on input line 21.
+(pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
 
  []
 
@@ -1653,63 +1759,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--14
 
 File: Images/hcmut.png Graphic file (type png)
 <use Images/hcmut.png>
-Package pdftex.def Info: Images/hcmut.png  used on input line 254.
-(pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.254 \newpage
-               [1] (Contents/CoSoThietKe.tex)
-
-File: Images/hcmut.png Graphic file (type png)
-<use Images/hcmut.png>
-Package pdftex.def Info: Images/hcmut.png  used on input line 256.
-(pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.256 \newpage
-               [2] (Contents/CoSoLyThuyet.tex)
-
-File: Images/hcmut.png Graphic file (type png)
-<use Images/hcmut.png>
 Package pdftex.def Info: Images/hcmut.png  used on input line 258.
 (pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.258 \newpage
-               [3] (Contents/PhanTichHeThong.tex)
+[6 <./Images/AGameSuck.png>] (Contents/PhanTichHeThong.tex)
 
 File: Images/hcmut.png Graphic file (type png)
 <use Images/hcmut.png>
 Package pdftex.def Info: Images/hcmut.png  used on input line 260.
 (pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
-[4] (Contents/ThietKeHeThong.tex)
+[7] (Contents/ThietKeHeThong.tex)
 
 File: Images/hcmut.png Graphic file (type png)
 <use Images/hcmut.png>
 Package pdftex.def Info: Images/hcmut.png  used on input line 262.
 (pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
-[5] (Contents/TongKet.tex) (Outro/TaiLieuThamKhao.tex)
+[8] (Contents/TongKet.tex) (Outro/TaiLieuThamKhao.tex)
 
 File: Images/hcmut.png Graphic file (type png)
 <use Images/hcmut.png>
 Package pdftex.def Info: Images/hcmut.png  used on input line 267.
 (pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
-[6] (Outro/PhuLuc.tex)
+[9] (Outro/PhuLuc.tex)
 
 File: Images/hcmut.png Graphic file (type png)
 <use Images/hcmut.png>
 Package pdftex.def Info: Images/hcmut.png  used on input line 269.
 (pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
-[7] 
+[10] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (main.aux)
  ***********
@@ -1717,23 +1793,24 @@ LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 90F3B1312330EB5FC346F4FD25D5B2B5;6334.
+(rerunfilecheck)             Checksum: C2FCA8CCEBA8F03C0BA2F78B124215DE;6955.
  ) 
 Here is how much of TeX's memory you used:
- 29605 strings out of 473682
- 561289 string characters out of 5719215
- 1116129 words of memory out of 5000000
- 52010 multiletter control sequences out of 15000+600000
- 595838 words of font info for 76 fonts, out of 8000000 for 9000
+ 29735 strings out of 473682
+ 563683 string characters out of 5719215
+ 1119610 words of memory out of 5000000
+ 52119 multiletter control sequences out of 15000+600000
+ 603985 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,24n,115p,1011b,483s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 104i,24n,115p,1303b,577s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmb8v.
+pfb><C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.
 pfb><C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmr8
 v.pfb><C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utm
 ri8v.pfb>
-Output written on main.pdf (14 pages, 194972 bytes).
+Output written on main.pdf (17 pages, 3048088 bytes).
 PDF statistics:
- 283 PDF objects out of 1000 (max. 8388607)
- 51 named destinations out of 1000 (max. 500000)
- 298 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 335 PDF objects out of 1000 (max. 8388607)
+ 62 named destinations out of 1000 (max. 500000)
+ 337 words of extra memory for PDF output out of 10000 (max. 10000000)
 
