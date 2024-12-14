@@ -19,20 +19,21 @@
 \contentsline {subsection}{\numberline {2.5}Các đối tượng chính trong màn chơi}{4}{subsection.2.5}%
 \contentsline {section}{\numberline {3}Cơ sở lý thuyết}{5}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Thiết kế màn chơi}{5}{subsection.3.1}%
-\contentsline {section}{\numberline {4}Phân tích Thiết kế hệ thống}{6}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Các Stakeholder và User story}{6}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}User story của Game Player}{6}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}User story của Game Master}{6}{subsubsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.2}Các thành phần của hệ thống}{6}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Các yêu cầu của hệ thống}{6}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Yêu cầu chức năng}{6}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Yêu cầu phi chức năng}{6}{subsubsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.4}Usecase Diagram của toàn hệ thống}{6}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Usecase Diagram cho Game Client}{6}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}Usecase Diagram cho Adminstrator}{6}{subsubsection.4.4.2}%
-\contentsline {section}{\numberline {5}Thiết kế hệ thống}{7}{section.5}%
-\contentsline {section}{\numberline {6}Tổng kết}{8}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Nhận xét}{8}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Định hướng phát triển của sản phẩm}{8}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Tài liệu tham khảo}{8}{section.7}%
-\contentsline {section}{\numberline {8}Phụ lục}{9}{section.8}%
+\contentsline {subsubsection}{\numberline {3.1.1}Các bước thiết kế một màn chơi}{5}{subsubsection.3.1.1}%
+\contentsline {section}{\numberline {4}Phân tích Thiết kế hệ thống}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Các Stakeholder và User story}{7}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}User story của Game Player}{7}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}User story của Game Master}{7}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.2}Các thành phần của hệ thống}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Các yêu cầu của hệ thống}{7}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Yêu cầu chức năng}{7}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Yêu cầu phi chức năng}{7}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}Usecase Diagram của toàn hệ thống}{7}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Usecase Diagram cho Game Client}{7}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Usecase Diagram cho Adminstrator}{7}{subsubsection.4.4.2}%
+\contentsline {section}{\numberline {5}Thiết kế hệ thống}{8}{section.5}%
+\contentsline {section}{\numberline {6}Tổng kết}{9}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Nhận xét}{9}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Định hướng phát triển của sản phẩm}{9}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Tài liệu tham khảo}{9}{section.7}%
+\contentsline {section}{\numberline {8}Phụ lục}{10}{section.8}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.11)  13 DEC 2024 17:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.11)  14 DEC 2024 09:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1547,7 +1547,7 @@ Package hyperref Info: Link coloring ON on input line 158.
 \openout4 = `main.out'.
 
 \c@lstlisting=\count384
-<Images/hcmut.png, id=154, 514.3215pt x 491.9178pt>
+<Images/hcmut.png, id=158, 514.3215pt x 491.9178pt>
 File: Images/hcmut.png Graphic file (type png)
 <use Images/hcmut.png>
 Package pdftex.def Info: Images/hcmut.png  used on input line 181.
@@ -1654,7 +1654,7 @@ l.245 \newpage
 
 
 [3] (Contents/GioiThieuDeTai.tex
-<Images/StatsMostLanguage.png, id=235, 1003.75pt x 547.04375pt>
+<Images/StatsMostLanguage.png, id=242, 1003.75pt x 547.04375pt>
 File: Images/StatsMostLanguage.png Graphic file (type png)
 <use Images/StatsMostLanguage.png>
 Package pdftex.def Info: Images/StatsMostLanguage.png  used on input line 12.
@@ -1701,7 +1701,7 @@ been already used, duplicate ignored
 l.254 \newpage
                [2{C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/
 base/8r.enc}] (Contents/CoSoThietKe.tex
-<Images/Overall.png, id=247, 722.7pt x 407.27156pt>
+<Images/Overall.png, id=254, 722.7pt x 407.27156pt>
 File: Images/Overall.png Graphic file (type png)
 <use Images/Overall.png>
 Package pdftex.def Info: Images/Overall.png  used on input line 6.
@@ -1729,37 +1729,63 @@ File: Images/hcmut.png Graphic file (type png)
 <use Images/hcmut.png>
 Package pdftex.def Info: Images/hcmut.png  used on input line 256.
 (pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
-[4] (Contents/CoSoLyThuyet.tex)
+[4] (Contents/CoSoLyThuyet.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--7
+
+ []
+
+<Images/AGameSuck.png, id=265, 644.4075pt x 377.91188pt>
+File: Images/AGameSuck.png Graphic file (type png)
+<use Images/AGameSuck.png>
+Package pdftex.def Info: Images/AGameSuck.png  used on input line 17.
+(pdftex.def)             Requested size: 455.24411pt x 266.98724pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--20
+
+ []
+
+
+
+File: Images/hcmut.png Graphic file (type png)
+<use Images/hcmut.png>
+Package pdftex.def Info: Images/hcmut.png  used on input line 21.
+(pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+
+ []
+
+)
 
 File: Images/hcmut.png Graphic file (type png)
 <use Images/hcmut.png>
 Package pdftex.def Info: Images/hcmut.png  used on input line 258.
 (pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
-[5] (Contents/PhanTichHeThong.tex)
+[6 <./Images/AGameSuck.png>] (Contents/PhanTichHeThong.tex)
 
 File: Images/hcmut.png Graphic file (type png)
 <use Images/hcmut.png>
 Package pdftex.def Info: Images/hcmut.png  used on input line 260.
 (pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
-[6] (Contents/ThietKeHeThong.tex)
+[7] (Contents/ThietKeHeThong.tex)
 
 File: Images/hcmut.png Graphic file (type png)
 <use Images/hcmut.png>
 Package pdftex.def Info: Images/hcmut.png  used on input line 262.
 (pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
-[7] (Contents/TongKet.tex) (Outro/TaiLieuThamKhao.tex)
+[8] (Contents/TongKet.tex) (Outro/TaiLieuThamKhao.tex)
 
 File: Images/hcmut.png Graphic file (type png)
 <use Images/hcmut.png>
 Package pdftex.def Info: Images/hcmut.png  used on input line 267.
 (pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
-[8] (Outro/PhuLuc.tex)
+[9] (Outro/PhuLuc.tex)
 
 File: Images/hcmut.png Graphic file (type png)
 <use Images/hcmut.png>
 Package pdftex.def Info: Images/hcmut.png  used on input line 269.
 (pdftex.def)             Requested size: 28.44864pt x 28.44792pt.
-[9] 
+[10] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (main.aux)
  ***********
@@ -1767,24 +1793,24 @@ LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DA3B78F6E9937604617D428A6911898F;6695.
+(rerunfilecheck)             Checksum: C2FCA8CCEBA8F03C0BA2F78B124215DE;6955.
  ) 
 Here is how much of TeX's memory you used:
- 29720 strings out of 473682
- 563357 string characters out of 5719215
- 1118610 words of memory out of 5000000
- 52109 multiletter control sequences out of 15000+600000
+ 29735 strings out of 473682
+ 563683 string characters out of 5719215
+ 1119610 words of memory out of 5000000
+ 52119 multiletter control sequences out of 15000+600000
  603985 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,24n,115p,1013b,488s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 104i,24n,115p,1303b,577s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmb8v.
 pfb><C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.
 pfb><C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmr8
 v.pfb><C:/Users/ADMIN/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utm
 ri8v.pfb>
-Output written on main.pdf (16 pages, 435365 bytes).
+Output written on main.pdf (17 pages, 3048088 bytes).
 PDF statistics:
- 318 PDF objects out of 1000 (max. 8388607)
- 57 named destinations out of 1000 (max. 500000)
- 324 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 335 PDF objects out of 1000 (max. 8388607)
+ 62 named destinations out of 1000 (max. 500000)
+ 337 words of extra memory for PDF output out of 10000 (max. 10000000)
 
