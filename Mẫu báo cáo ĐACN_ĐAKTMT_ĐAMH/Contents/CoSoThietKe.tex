@@ -27,11 +27,45 @@
 \hspace*{1cm} Mỗi màn chơi, người chơi sẽ được đưa đến một bản đồ, gồm các phòng liên thông với nhau. Nhiệm vụ của người chơi là sử dụng các câu truy vấn để tương tác nhân vật chính, hoàn thành yêu cầu được đưa ra trong mỗi căn phòng, đến điểm cuối của bản đồ và hoàn thành màn chơi.
 
 \subsubsection{Bản đồ trong màn chơi}
+\hspace*{1cm}Một màn chơi sẽ có dạng mê cung gồm nhiều căn phòng. Các căn phòng này có thể liên thông với nhau tạo nên một mê cung phức tạp cho người chơi khám phá. Người chơi khi bắt đầu màn chơi sẽ xuất phát ở căn phòng lối vào và kết thúc ở căn phòng lối ra. Chỉ có một lối vào và có thể có một hoặc nhiều lối ra. Ở lối ra thường sẽ có một con Miniboss hoặc Boss để người chơi đối đầu. Mặc định là các phòng bị bóng tối che khuất và chỉ có thể thấy các căn phòng khác khi đã clear được căn phòng hiện tại.\\
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=10cm]{Images/MapStructure.png}
+	\vspace{0.5cm}
+	\caption{Cấu trúc một bản đồ chơi}
+\end{figure}
+
+\hspace*{1cm}Trong một căn phòng, có thể xuất hiện quái vật, rương kho báu hoặc không có gì, đi cùng với một môi trường nhất định. Người chơi có thể chinh phục 1 căn phòng bằng các cách như tiêu diệt quái vật, mở rương kho báu hoặc đi vào 1 căn phòng trống. Sau khi chinh phục một căn phòng thì game sẽ mở khóa các căn phòng lân cận (không cần các phòng phải lối đi từ căn phòng hiện tại), người chơi quyết định đi căn phòng nào tiếp theo. Lưu ý rằng người chơi không được quay đầu (quay trở lại căn phòng đã đi trước đó). Các căn phòng có thể chứa các route đến các màn chơi khác trên bản đồ. Căn phòng cuối cùng, chính là lối ra, trong đó sẽ có một con boss hoặc min boss. Nhiệm vụ của người chơi là đánh bại boss đó để có thể thoát ra ngoài.\\
 \subsubsection{Chiến đấu}
+\hspace*{1cm}Gameplay chính của phần chiến đấu hoạt động theo dạng đánh theo lượt luân phiên giữa người chơi và quái vật.
 
-
+\begin{itemize}
+	\item Khi đến lượt của mình, người chơi được thực thi một câu lệnh hợp lệ của SQL. Câu lệnh phải chạy được thì mới tính là một câu lệnh hợp lệ. Sử dụng các các câu lệnh của SQL là chưa đủ, để tấn công quái vật, người chơi phải sử dụng câu lệnh gọi hàm được game cho trước (sẽ được nêu ở Game Mechanics). Mặc dù có cơ chế đánh theo lượt luân phiên, vẫn có khả năng người chơi sau khi xong một lượt có thể chơi một lượt nữa (đây gọi là sự nhanh nhẹn, nó sẽ là một chỉ số có ảnh hưởng đến xác suất đánh thêm lượt nữa của người chơi và quái vật). Để công bằng, cho dù người chơi có gia tăng chỉ số nhanh nhẹn cao bao nhiêu, xác suất tối đa để thêm lượt là 40\%. Điều này được tính cho cả quái vật. Tuy nhiên, mỗi thực thể chỉ có thể tấn công tối đa 2-3 lượt
+	\item Đến lượt của quái, quái sẽ tấn công người chơi theo 2 cách
+	\begin{itemize}
+		\item Quái vật tạo ra chướng ngại hoặc thử thách để người chơi phải tránh né (tương tự với game Undertale). Người chơi có thể trúng nhiều hơn 1 đòn đánh của quái nhưng hiệu ứng sát thương có thể chỉ ảnh hưởng 1 lần và không cộng dồn trong lần tấn công của quái.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=10cm]{Images/MonsterAttack1.png}
+			\vspace{0.5cm}
+			\caption{Thử thách quái vật tạo ra}
+		\end{figure}
+		
+		\item Quái sẽ tấn công người chơi 1 lần duy nhất trong lượt, người chơi chắc chắn trúng đòn (sát thương có thể ít hay nhiều, thậm chí không đáng kể, không ảnh hưởng health). Đòn tấn công này có thể mang một số hiệu ứng khác nhau (sẽ nêu rõ trong Game Mechanics). Cách tấn công này tương tự Bookworm Adventure.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=10cm]{Images/MonsterAttack2.png}
+			\vspace{0.5cm}
+			\caption{Quái vật tấn công kèm hiệu ứng}
+		\end{figure}
+		
+	\end{itemize}
+\end{itemize}
 \subsubsection{Win condition}
+Người chơi sẽ thắng khi đánh bại được quát vật, tức là khiến cho hp của nó về 0.
 \subsubsection{Lose condition}
-
+Người chơi sẽ thua khi bị tiêu diệt bởi quái vật, để hp của mình chạm đến 0.
 \subsection{Các đối tượng chính trong màn chơi}
