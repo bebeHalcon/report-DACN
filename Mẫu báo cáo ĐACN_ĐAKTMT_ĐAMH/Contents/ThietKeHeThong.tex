@@ -385,3 +385,63 @@ Dưới đây là đoạn code mẫu cho việc kết nối đến SQL Server v�
 	}
 	
 \end{verbatim}
+\hspace*{1cm} Tuy nó có sự tiện lơi và gọn nhẹ và dễ dàng nhúng vào các ứng dụng khác, nhưng đổi lại, nó phải hy sinh nhiều tính năng. Nó không hỗ trợ cấp quyền cho người dùng, nên việc xử lý trên schema sẽ phải thêm một số bước mới có thể cho kỳ vọng. Ngoài ra, với việc không có stored procedure cũng là một thiệt thòi lớn cho những ai muốn sử dụng procedure.\\
+\hspace*{1cm} Bỏ qua những khuyết điẻm mà giải pháp này còn tồn đọng, nhóm vẫn quyết định sử dụng giải pháp này vì tính nhất quán và đồng nhất với dự án. Các vấn đề phát sinh nhóm sẽ có những cách xử lý khác nhau.
+\subsection{Schema chính của game}
+\hspace*{1cm} Một trong những thứ không thể thiếu của game là schema của trò chơi. Người chơi sẽ sử dụng các câu truy vấn SQL để khai thác tối đa SQL, tìm được mục tiêu và tiêu diệt chúng.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Images/SchemaEERD.png}
+	\vspace{0.5cm}
+	\caption{Schema EERD của game}
+\end{figure}
+\subsection{Xử lý các hành vi ngoại lệ của người chơi}
+
+\hspace*{1cm} Trong quá trình chơi, khó mà tránh khỏi việc người chơi có những hành vi cố ý tác động đến schema, nếu không xử lý hợp lý sẽ gây tình trạng màn chơi bị rối loạn, cũng như có thể dẫn đến mất ổn định game. Luôn nhớ rằng Schema chỉ là Playground của game, các object của game chỉ được quản lý bởi hệ thống, nên việc xử lý phải mang tính răn đe, cho người chơi nhớ được mọi hành vi của bản thân đều có thể mang lại hậu quả, tương tự với việc xử lý SQL trong công việc thực tế.
+
+\hspace*{1cm} Với việc nhóm quyết định sử dụng SQLite và tích hợp thẳng vào game. Khiến nó bộc lộ hạn chế lớn: nó không hỗ trợ việc phân quyền. Vì vậy nhóm quyết định đặt ra các bộ quy tắc để xử lý ở mức DB Manager khi người chơi có các hành vi sau:
+
+\subsubsection{Chèn (Insert) dữ liệu vào các bảng}
+Việc insert dữ liệu vào bảng có thể dẫn đến các hành vi phản hồi của game khác nhau:
+
+\paragraph{Chèn vào các bảng Item, Skills}
+Các Item cũng như record đã được quản lý bởi game, nên cho dù người chơi có chèn vào bao nhiêu record dữ liệu giả rồi sử dụng chúng trong hàm attack hoặc use đều vô hiệu. Schema tìm được ID trong quá trình xử lý câu lệnh nhưng đưa vào hệ thống game để thao tác mà không tìm ID cũng vô nghĩa, hệ thống sẽ thông báo đã không có gì xảy ra và lượt thao tác của người chơi kết thúc. Không như việc ID không đúng thì người chơi vẫn có cơ hội nhập lại, việc thêm ID giả vào sẽ mang lại hậu quả nghiêm trọng hơn cho người chơi.
+
+\paragraph{Chèn vào các bảng Monster, Critical Parts}
+Ngoại trừ việc chèn vào bảng để giải quyết các quái vật khó nhằn, việc chèn vào bảng các record ``rác'' là hành vi gây bất lợi cho người chơi. Vì số lượng record trong bảng lớn khiến người chơi khó xác định được record đúng (tương tự việc bộ phận quái vật tự tạo các record để ngụy trang).
+
+\paragraph{Chèn dữ liệu vào Environment Objects}
+Việc thêm dữ liệu vào Environment Objects là vô nghĩa, không mang lại lợi ích cho người chơi, mà chỉ khiến cho bảng dữ liệu to ra, gây khó khăn cho người chơi trong việc xác định entity id phù hợp.
+
+\paragraph{Chèn record vào bảng Player}
+Việc insert record của bảng player là vô nghĩa, vì sau khi insert, game sẽ update lại giá trị của player, nó bao gồm việc loại bỏ các record ``rác'' không được quản lý bởi hệ thống, việc insert là vô nghĩa.
+
+\subsubsection{Cập nhật (Update) record của các bảng}
+
+\paragraph{Cập nhật record của các bảng Item, Skills}
+Tương tự với Insert, các Item cũng như record đã được quản lý bởi game. Cho dù người chơi có update vào bao nhiêu record dữ liệu thành theo ý của mình rồi sử dụng chúng trong hàm attack hoặc use đều không có sự thay đổi, game vẫn sẽ lấy giá trị mặc định do game đưa vào schema.
+
+\paragraph{Cập nhật record của các bảng Monster, Critical Parts}
+Ngoại trừ việc update để giải quyết các quái vật khó nhằn, việc update các record vào bảng có thể biến record đó trở thành record rác và gây bất lợi cho người chơi. Game manager không chỉ quản lý thông tin record hiện tại mà còn quản lý record trong quá khứ.
+
+\paragraph{Cập nhật record của Environment Objects}
+Việc update record của các vật thể trong môi trường có kết quả dẫn đến tương tự với việc delete. Theo gameplay, việc delete record của game object trong môi trường có thể kích hoạt hiệu ứng của vật thể đó, hiệu ứng có thể mang lại lợi thế, bất lợi, thậm chí còn mang hậu quả nghiêm trọng (ví dụ sát thương cho người chơi quá lớn, làm người chơi chết).
+
+\paragraph{Cập nhật record của bảng Player}
+Việc update record của bảng player là vô nghĩa, vì sau khi update, game sẽ khôi phục giá trị player về trước khi nó được update.
+
+\subsubsection{Xóa (Delete) dữ liệu khỏi các bảng}
+
+\paragraph{Xóa record các bảng Item, Skills}
+Việc xoá record của bảng Item, Skills sẽ mang lại bất lợi cho người chơi. Khi người chơi thực hiện hàm attack, use thì schema sẽ báo lỗi không tìm thấy id phù hợp, khi đó người chơi đến hết màn chơi không thể sử dụng hoặc tấn công bằng item đó nữa.
+
+\paragraph{Xóa record các bảng Monster, Critical Parts}
+Ngoại trừ việc xoá record để giải quyết các vấn đề phát sinh từ quái vật khó nhằn, đây là hành vi gây bất lợi cho người chơi. Nếu mất đi record cần thiết, người chơi sẽ không thể xác định được record của bộ phận monster, việc thực thi câu lệnh attack() sẽ trả lỗi ở mức Database.
+
+\paragraph{Xóa dữ liệu Environment Objects}
+Tương tự với update record, việc delete record của game object trong môi trường có thể kích hoạt hiệu ứng của vật thể đó, hiệu ứng có thể mang lại lợi thế, bất lợi, thậm chí còn mang hậu quả nghiêm trọng.
+
+\paragraph{Xóa record bảng Player}
+Với việc bảng player tự phục hồi, nên việc delete record không có ảnh hưởng gì.
+
+
