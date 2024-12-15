@@ -348,13 +348,16 @@ Người chơi sẽ thắng khi đánh bại được quát vật, tức là khi
 \subsubsection{Lose condition}
 Người chơi sẽ thua khi bị tiêu diệt bởi quái vật, để hp của mình chạm đến 0.
 \subsection{Các đối tượng chính trong màn chơi}
-\subsubsection{Người chơi}
+\subsubsection{Nhân vật chính}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=5cm]{Images/Player.png}
 	\vspace{0.5cm}
 	\caption{Người chơi}
 \end{figure}
+\hspace*{1cm} Nhân vật chính sẽ là nhân vật đại diện cho người chơi, chịu trách nhiệm thực hiện các hành động mà người chơi đưa ra. Nhân vật thường sẽ đứng bên trái khu vực chiến đấu. Trên đầu nhân vật chính sẽ có tên của người chơi.\\
+\hspace*{1cm} Nhân vật chính sẽ hoạt động theo các câu truy vấn mà người chơi nhập vào. Thường sẽ là \textbf{attack} và \textbf{use}. Ngoài ra, người chơi có thể thay đổi ngoại hình của nhân vật chính thông qua các vật phẩm. Những vật phẩm này sẽ
+được bán trong cửa hàng của trò chơi.
 \subsubsection{Quái vật}
 \begin{figure}[H]
 	\centering
@@ -362,6 +365,8 @@ Người chơi sẽ thua khi bị tiêu diệt bởi quái vật, để hp của
 	\vspace{0.5cm}
 	\caption{Quái vật}
 \end{figure}
+\hspace*{1cm} Quái vật chính là đối thủ của người chơi, và sẽ là đối trọng của người chơi trong chiến đấu. Quái vật thường sẽ đứng phía bên phải của khu vực chiến đấu. Trên đầu quái vật gồm tên quái vật và một thanh trạng thái của các bộ phận chí mạng, lưu ý rằng nó không thể hiện điểm máu của các bộ phận mà nó chỉ biểu thị trạng thái tồn tại của các bộ phận của quái vật.\\
+\hspace*{1cm} Mỗi loại quái vật có thể có các ngoại hình khác nhau. Ngoại hình quái vật mà người chơi nhìn thấy bằng mắt có thể là gợi ý giúp người chơi khai thác schema nói chung, bảng Monster và Criticalparts có hiệu quả thông qua các gợi ý về màu sắc, hình dạng, các đặc điểm bên ngoài,... Ngoài ra, người chơi cũng có thể xâu chuỗi các thông tin trong schema và ngoại hình bên ngoài để có thể tìm được các entityid của quái vật và bộ phận quái vật đúng một cách hiệu quả.
 \subsubsection{Thông số, trang bị và kho đồ}
 \begin{figure}[H]
 	\centering
@@ -369,6 +374,13 @@ Người chơi sẽ thua khi bị tiêu diệt bởi quái vật, để hp của
 	\vspace{0.5cm}
 	\caption{Thông số, trang bị và kho đồ}
 \end{figure}
+\hspace*{1cm} Đây là khu vực chứa các thông tin của nhân vật chính, tức là người chơi. Giao diện gồm 3 tabs
+\begin{itemize}
+	\item User Stats: Tab này là nơi chứa thông số của người chơi hiện tại. Bao gồm entityID, tên người chơi, máu hiện tại, trạng thái hiệu ứng hiện tại, cùng các thông tin khác
+	\item Equipment: Chứa thông tin các món trang bị được trang bị trong các slots trang bị của người chơi. Chủ yếu chứa thông tin của các món trang bị bao gồm hình ảnh, loại trang bị và tên trang bị, khi người chơi di chuột vào icon của trang bị, toàn bộ thông tin của trang bị sẽ được hiện ra.
+	\item Inventory: Chứa thông tin các món vật phẩm trong kho đồ, tương tự với trang bị, các row trong tab này chủ yếu chứa thông tin của các vật phẩm bao gồm hình ảnh, loại vật phẩm và tên của nó, khi người chơi di chuột vào icon, toàn bộ thông tin của vật phẩm sẽ được hiện ra. Các vật phẩm tiêu hao (bình hồi máu, bình giải hiệu ứng) sẽ được ưu tiên hiện lên trên đầu.
+\end{itemize}
+\hspace*{1cm} Thông tin của người chơi luôn được cập nhật kịp thời để người chơi có thể dễ dàng nắm bắt tình trạng nhân vật người chơi đang điều khiển.
 \subsubsection{Ô nhập lệnh và kết quả truy vấn}
 \begin{figure}[H]
 	\centering
@@ -376,10 +388,21 @@ Người chơi sẽ thua khi bị tiêu diệt bởi quái vật, để hp của
 	\vspace{0.5cm}
 	\caption{Ô nhập lệnh và kết quả truy vấn}
 \end{figure}
-\subsubsection{Bản đồ màn chơi và phòng hiện tại}
+\hspace*{1cm} Đây là nơi diễn ra các hoạt động nhập câu truy vấn và nhận về kết quả dưới dạng bảng. Bảng kết quả gồm hàng đầu chứa header của bảng, các hàng tiếp theo chứa nội dung các hàng tương ứng trong bảng. Người chơi có thể di chuột vào ô để xem toàn bộ nội dung của bảng cũng như click vào ô để sao chép nội dung của ô đó vào clipboard. Người chơi cũng có thể nhập các câu lệnh truy vấn insert vào các bảng đặc biệt để ra lệnh người chơi tấn công vào mục tiêu được chỉ định.\\
+\hspace*{1cm} Phía bên phải sẽ là một vùng chứa các tab đến các bảng đã được query. Người chơi có thể chuyển qua lại giữa các tab, cũng như đóng các tab không cần dùng đến. Khi người chơi select một bảng không có trong tab, thì tab mới sẽ được tạo ra với nội dung là kết quả trả về của bảng vừa truy vấn.
+\hspace*{1cm} Bên cạnh đó là một tab "Game Notes". Nó hoạt động như một cuốn sổ note, nó giúp người chơi ghi chú lại những dữ kiện trong quá trình khai thác schema, thay vì phải mở một chương trình text editor bên ngoài, thì chỉ cần sử dụng tab này thì có thể ghi lại những ghi chú mà người chơi mong muốn.
+\subsubsection{Phong cảnh màn chơi và phòng hiện tại}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=10cm]{Images/CurrentRoom.png}
 	\vspace{0.5cm}
 	\caption{Quang cảnh môi trường của phòng chơi hiện tại}
 \end{figure}
+\hspace*{1cm} Đây là khu vực chơi của trò chơi, nơi môi trường được thể hiện trên màn hình. Người chơi có thể xem xét môi trường cũng như các vật thể trong nó để có thể xác định yếu tố môi trường được tốt hơn, nhằm phát huy lợi thế từ môi trường.\\
+\hspace*{1cm} Phía trên là phần giao diện phía trên. Vùng ở giữa chứa tên màn chơi và khu vực hiện tại của người chơi. Đi kèm với các nút theo thứ tự từ trái sang phải sẽ là: 
+\begin{enumerate}
+	\item Nút Map: Mở bản đồ của màn chơi.
+	\item Nút Schema: Mở Schema Diagram của game.
+	\item Nút Documentation: Mở Documentation của SQLite.
+	\item Nút Settings: Mở hộp thoại Settings.
+\end{enumerate}
