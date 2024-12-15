@@ -111,6 +111,45 @@
 	\vspace{0.5cm}
 	\caption{Các câu lệnh SQL cơ bản}
 \end{figure}
+\subsection{Dependency Injection Design Pattern} 
+\subsubsection{Dependency Injection là gì?}
+\hspace*{1cm} Dependency Injection Design Pattern là một quá trình trong đó chúng ta tiêm (inject) đối tượng phụ thuộc (dependencies) của một lớp vào một lớp phụ thuộc đối tượng đó. Dependency Injection Design Pattern là mẫu thiết kế được sử dụng phổ biến nhất hiện nay để loại bỏ sự phụ thuộc giữa các đối tượng.\\
+\hspace*{1cm} Dependency Injection (DI) là một mẫu thiết kế được sử dụng để triển khai Inversion of Control. Nó cho phép tạo các đối tượng phụ thuộc bên ngoài một lớp và cung cấp các đối tượng đó cho một lớp phụ thuộc vào nó. Mẫu thiết kế DI bao gồm 3 lớp:
+\begin{itemize}
+    \item Lớp Client: Lớp Client (lớp phụ thuộc) là lớp phụ thuộc vào Lớp Service. Điều đó có nghĩa là Lớp Client muốn sử dụng các Dịch vụ (Phương thức) của Lớp Service.
+    \item Lớp Service: Lớp Service (phụ thuộc) là lớp cung cấp các dịch vụ thực tế cho lớp máy khách.
+    \item Lớp Injector: Lớp Injector là lớp đưa đối tượng Lớp dịch vụ vào Lớp máy khách.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Images/DI_diagram.png}
+    \vspace{0.25cm}
+    \caption{Sơ đồ biểu diễn Dependency Injection}
+\end{figure}
+\hspace*{1cm} Như bạn có thể thấy, Lớp Injector tạo một đối tượng của Lớp dịch vụ và inject đối tượng đó vào Lớp Client. Sau đó, Lớp Client sử dụng Đối tượng được inject của Lớp Service để gọi các Phương thức của Lớp Service. Vì vậy, theo cách này, DI tách trách nhiệm tạo đối tượng của lớp Service ra khỏi Lớp Client. 
+\subsubsection{Các loại Dependency Injection}
+\hspace*{1cm} Lớp Injector đưa Dependency Object vào Lớp Client theo ba cách khác nhau:
+\begin{itemize}
+    \item Constructor injection: Các dependency (biến phụ thuộc) được cung cấp thông qua constructor (hàm tạo lớp).
+    \item Setter injection: Các dependency sẽ được truyền vào 1 class thông qua các setter method (hàm setter).
+    \item Interface injection: Dependency sẽ cung cấp một Interface, trong đó có chứa hàm có tên là Inject. Các client phải triển khai một Interface mà có một setter method dành cho việc nhận dependency và truyền nó vào class thông qua việc gọi hàm Inject của Interface đó.
+\end{itemize}
+\hspace*{1cm} Trong ba kiểu Inject thì phương thức Constructor injection là phổ biến nhất vì tính linh hoạt, mềm dẻo và dễ xây dựng thư viện DI.
+\subsubsection{Ưu và khuyết điểm}
+\hspace*{1cm} \textbf{Ưu điểm}
+\begin{itemize}
+    \item Giảm sự kết dính giữa các module.
+    \item Code dễ bảo trì, dễ thay thế module.
+    \item Rất dễ test và viết Unit Test.
+    \item Dễ dàng thấy quan hệ giữa các module (Vì các dependency đều được inject vào constructor).
+\end{itemize}
+\hspace*{1cm} \textbf{Khuyết điểm}
+\begin{itemize}
+    \item Các developer mới sẽ gặp khó khăn khi học về DI.
+    \item Sử dụng interface nên đôi khi sẽ khó debug, do không biết chính xác module nào được gọi.
+    \item Các object được khởi tạo toàn bộ ngay từ đầu, có thể làm giảm performance.
+    \item Làm tăng độ phức tạp của code.
+\end{itemize}
 \subsection{Unity Engine}
 Unity là một trong những engine phát triển game phổ biến nhất hiện nay. Unity cung cấp cho người dùng một nền tảng để tạo ra các trò chơi, ứng dụng 2D và 3D một cách thuận tiện và có hệ thống. Ưu điểm của việc sử dụng engine đó là engine sẽ hỗ trợ sẵn những cơ chế cốt lõi của một trò chơi điện tử bao gồm render đồ họa 2D và 3D, tính toán vật lý và va chạm, âm thanh, animation ...\\
 Ngôn ngữ lập trình được sử dụng cùng với Unity là C\#. C\# là một ngôn ngữ lập trình thuần hướng đối tượng, rất phù hợp với phát triển hệ thống component-based. Điểm mạnh của C\# là cú pháp tuy đơn giản nhưng rất chặt chẽ và linh hoạt, giúp cho nhà phát triển dễ dàng hiện thực những ý tưởng sáng tạo của mình.\\
