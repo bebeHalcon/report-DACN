@@ -40,12 +40,54 @@
 \end{itemize}
 
 
-\subsection{Các thành phần của hệ thống}
 
 \subsection{Các yêu cầu của hệ thống}
 \subsubsection{Yêu cầu chức năng}
+\subsubsection{Yêu cầu chức năng}
+\textbf{Yêu cầu chức năng liên quan đến giao diện trò chơi:}
+\begin{itemize}
+	\item Trò chơi sẽ chơi ở chế độ toàn màn hình.
+	\item Nhân vật chính xuất hiện ở màn chơi
+	\item Giao diện trang bị trực quan, chia làm 3 phần: Kho đồ, slot trang bị và thông số người chơi. Có thể dùng chuột để xem thông tin trang bị, cũng như sắp xếp và di chuyển trang bị từ khung trang bị vào kho đồ và ngược lại.
+	\item Giao diện bên ngoài màn chơi gồm bản đồ để chọn mà chơi. Thông tin màn chơi sẽ được hiện lên khi người chơi di chuột đến, cùng với các nút để mở giao diện trang bị và để vào shop để mua bán vật phẩm.
+	\item Giao diện chơi được phân chia rõ ràng các khu vực, bao gồm vùng để chứa điều hướng Tab, thanh nhập câu lệnh, màn hình hiện kết quả trả về, vùng để chứa thông tin người chơi gồm 3 tab Stats, Equipments, Inventory, vùng chiến đấu và vùng giao diện phía trên chứa thông tin màn chơi và 4 nút Map, Schema, Docs, Settings để mở các hộp thoại tương ứng.
+	\item Trong vùng chiến đấu, hiện rõ tên người chơi, tên quái vật và số bộ phần còn lại của quái vật.
+	\item Khi gây sát thương, cần có dòng văn bản hiển thị số sát thương mà nhân vật tấn công gây ra cho đối phương. Sau khi kết thúc đòn đánh, có thể có một hộp thoại thông báo tính hiệu quả đòn đánh, xem đòn đánh có "Effective" hay không,...
+	\item Có hộp thoại chứa schema diagram và bản đồ của màn chơi, giúp người chơi tra cứu.
+	\item Có hộp thoại documentation về ngôn ngữ SQL để người chơi tham khảo.
+	\item Vùng Player trên giao diện có thể hiển thị thông tin về tình trạng hiện tại, trang bị hiện có, những thông tin phải được cập nhật liên tục để người chơi có thể xử lý các nước đi tiếp theo.
+	\item Giao diện bảng record trực quan, các cell dễ nhìn, có thể xem được toàn bộ nội dung cũng như có thể sao chép toàn bộ nội dung của cell, cũng như cũng có thể sao chép toàn bộ hàng. Ngoài ra Có một vùng để điều hướng sang các tab khác, mỗi tab là kết quả bảng trả về, ngoài ra còn có tab Notes cho người chơi ghi các ghi chú trong quá trình chơi.
+	\item Menu của trò chơi gồm có các nút bấm: Play để bắt đầu chơi; Setting để người chơi thiết lập cài đặt trò chơi; Help để hiện giao diện hướng dẫn; Credit để hiển thị thông tin nhà phát hành; Exit để thoát trò chơi.
+	\item Trò chơi có giao diện chuyển đổi người dùng, người chơi có thể thêm, xoá người dùng có phần để hiển thị tên của người chơi. Người chơi có thể tự do thay đổi tên.
+\end{itemize}
+
+\textbf{Yêu cầu chức năng liên quan đến cơ chế chơi:}
+\begin{itemize}
+	\item Chế độ cốt truyện được chia thành nhiều màn chơi, chia thành các Chapter cho mỗi khu vực lớn trên bản đồ. Mỗi màn chơi sẽ hướng dẫn tôi những cơ chế mới của trò chơi với độ khó tăng dần. Càng đi sâu trong màn chơi độ khó sẽ tăng dần. 
+	\item Người chơi có thể chèn, xoá, cập nhật các bảng trong schema tự do mà không bị lỗi, trừ một số bảng đặc biệt. Đặc biệt là vùng chiến đấu, với các phản ứng của câu lệnh thì vùng chiến đấu sẽ có những hiển thị nhất định để cho người chơi thấy được những gì đã xảy ra sau khi người chơi chạy câu truy vấn.
+	\item Các nhân vật có hoạt hình chuyển động, khi đang đợi lượt đi, khi tấn công, sử dụng vật phẩm, khi bị tấn công và khi bị tiêu diệt.
+	\item Vùng chiến đấu hiển thị cấc thông tin về quái vật, về các phản ứng đòn đánh, về ngoại hình, hộp thoại cần được hiển thị chính xác để người chơi xác định đúng mục tiêu.
+	\item Trong trường hợp người chơi nhập câu lệnh có lỗi ở mức SQL, hệ thống sẽ báo lỗi câu truy vấn sai như thế nào và sẽ không kết thúc lượt của người chơi, người chơi có thể chỉnh sửa lại sao cho đúng. 
+	\item Cần có sự cân bằng trong game ở tất cả khía cạnh. Không thể để xảy ra trường hợp Over Powered (quá mạnh) hoặc Under Powered (quá yếu),...
+	\item Cần xử lý các trường hợp người chơi cố tình thay đổi cấu trúc schema, chèn, update và xoá record trong bảng nhằm mục đích phá hoại, làm game bị lỗi và không thể hoạt động được nữa.
+	\item Khi hoàn thành màn chơi, một bản thông báo sẽ xuất hiện. Bảng này hiển thị các thử thách đã đạt được và 3 nút bấm. Một nút bấm để trở về lựa chọn màn chơi, một nút bấm để chơi lại và một nút bấm để đến màn chơi kế tiếp.
+	
+\end{itemize}
+
+
 \subsubsection{Yêu cầu phi chức năng}
 
+\textbf{Yêu cầu phi chức năng liên quan đến Game Player:}
+\begin{itemize}
+	\item Hiệu năng ổn định, có thể chạy với 60FPS trong các ngữ cảnh khác nhau với cấu hình i5 - 8265U, Card Nvidia MX150, 12GB RAM. Có thể chạy với 120FPS khi tinh chỉnh cài đặt về đồ hoạ trên các cấu hình cao hơn.
+	\item Giao diện của trò chơi nên đơn giản, dễ hiểu, phù hợp với nhiều loại người chơi. Cần tránh các thao tác rườm rà, phức tạp.
+	Người chơi có thể thành thục chơi sau 30 phút trải nghiệm
+	\item Phong cách đồ hoạ 2D Pixel, sử dụng các hiệu ứng kỹ xảo để đánh bóng game.
+	\item Game giữ được sự ổn định khi quy mô của các object tăng lên, với nhiều object trong màn chơi ngày càng nhiều, hiệu ứng ngày càng dày đăc mà không có sự sụt giảm về hiệu năng.
+	\item Game nên chạy mượt mà không gặp vấn đề lớn về bug, glitch. Hệ thống save load hoạt động hiệu quả, có thể lưu lại tiến trình màn chơi, kể cả khi tắt ngang trò chơi, hoặc sự cố về phần mềm như crash, sự cố về phần cứng và hệ điều hành.
+	\item Các màn chơi cần có độ khó tăng dần, xoay tua giữa việc giới thiệu các tính năng mới và luyện tập các tính năng đã học. Màn chơi phải có độ khó vừa phải, không quá khó cũng không quá dễ.
+	\item Thời gian phản ứng sau khi thực hiện câu truy vấn thấp, nhỏ hơn 1 giây. Sau khi chạy phải có kết quả trả về tương ứng với loại câu truy vấn.
+\end{itemize}
 \subsection{Usecase Diagram của toàn hệ thống}
 \subsubsection{Usecase Diagram cho Game Client}
 \subsubsection{Usecase Diagram cho Adminstrator}
