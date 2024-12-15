@@ -105,6 +105,23 @@
 	\vspace{0.5cm}
 	\caption{Các câu lệnh SQL cơ bản}
 \end{figure}
+\subsection{SQLite}
+\subsubsection{SQLite là gì?}
+\hspace*{.5cm}SQLite là hệ quản trị cơ sở dữ liệu (DBMS) quan hệ tương tự như Mysql,  ... Đặc điểm nổi bật của SQLite so với các DBMS khác là gọn, nhẹ, đơn giản, đặt biệt không cần mô hình Server - Client, không cần cài đặt, cấu hình hay khởi động nên không có khái niệm User, Password hay quyền hạn trong SQLite Database. Dữ liệu cũng được lưu ở một file duy nhất.\\
+\hspace*{.5cm} SQLite thường không được sử dụng với các hệ thống lớn nhưng với những hệ thống ở quy mô vừa và nhỏ thì SQLite không thua các DBMS khác về chức năng hay tốc độ. Vì không cần cài đặt hay cấu hình nên SQLite được sử dụng nhiều trong việc phát triển, thử nghiệm vì tránh được những rắc rối trong quá trình cài đặt.
+\subsubsection{Ưu điểm}
+\hspace*{.5cm} Giao dịch trong SQLite tuân thủ theo nguyên tắc (ACID) ngay cả sau khi hệ thống treo và mất điện.\\
+\hspace*{.5cm} SQLite không cần mô hình Client – Server để hoạt động. Các thao tác dữ liệu trên SQLite chạy nhanh hơn so với các hệ quản trị cơ sở dữ liệu theo mô hình Client – Server.\\
+\hspace*{.5cm} SQLite không cần phải cấu hình. SQLite rất đơn giản và dễ dàng sử dụng.\\
+\hspace*{.5cm} SQLite hỗ trợ hầu hết các tính năng của ngôn ngữ truy vấn SQL theo chuẩn SQL92.\\
+\hspace*{.5cm} Một sở dữ liệu hoàn chỉnh được lưu trữ trong một tệp đa nền tảng duy nhất. Phù hợp với sử dụng dưới dạng định dạng tệp ứng dụng.\\
+\hspace*{.5cm} Đa nền tảng: Android, iOS, Linux, Mac, Solaris, Windows,.. Dễ dàng dịch chuyển sang các hệ thống khác.\\
+\hspace*{.5cm} SQLite rất nhỏ gọn, bản đầy đủ các tính năng nhỏ hơn 500kb, và có thể nhỏ hơn nếu lược bớt một số tính năng. Với đặc tính nhỏ gọn, truy xuất dữ liệu nhanh SQLite thường được sử dụng để nhúng vào các dự án.
+\subsubsection{Nhược điểm}
+\hspace*{.5cm} Một số tính năng của SQL92 không được hỗ trợ trong SQLite như ALTER DROP COLUMN, ADD CONSTRAINT, RIGHT JOIN, TRIGGER, phân quyền GRANT và REVOKE.\\
+\hspace*{.5cm} Vì SQLite không cần cấu hình, cài đặt, không hỗ trợ GRANT và REVOKE nên việc phân quyền truy cập cơ sở dữ liệu chỉ có thể là quyền truy cập file của hệ thống.\\
+\hspace*{.5cm} Do sử dụng cơ chế coarse-gained locking nên trong cùng một thời điểm SQLite có thể hỗ trợ nhiều người đọc dữ liệu, nhưng chỉ có 1 người có thể ghi dữ liệu.\\
+\hspace*{.5cm} SQLite không phải là lựa chọn hoàn hảo để đáp ứng các nhu cầu xử lý trên một khối lượng dữ liệu lớn, phát sinh liên tục.
 \subsection{Dependency Injection Design Pattern} 
 \subsubsection{Dependency Injection là gì?}
 \hspace*{1cm} Dependency Injection Design Pattern là một quá trình trong đó chúng ta tiêm (inject) đối tượng phụ thuộc (dependencies) của một lớp vào một lớp phụ thuộc đối tượng đó. Dependency Injection Design Pattern là mẫu thiết kế được sử dụng phổ biến nhất hiện nay để loại bỏ sự phụ thuộc giữa các đối tượng.\\
