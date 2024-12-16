@@ -83,6 +83,12 @@
 	\item Tính đúng đắn: Trình phân tích cú pháp xác minh rằng câu lệnh SQL tuân theo ngữ nghĩa SQL, hay các quy tắc, đảm bảo tính đúng đắn của câu lệnh truy vấn. Ví dụ: trình phân tích cú pháp kiểm tra xem lệnh SQL có kết thúc bằng dấu chấm phẩy hay không. Nếu thiếu dấu chấm phẩy, trình phân tích cú pháp sẽ trả về lỗi.
 	\item Quyền hạn: Trình phân tích cú pháp cũng xác thực rằng người dùng đang chạy truy vấn có quyền cần thiết để thao tác với dữ liệu tương ứng. Ví dụ: chỉ người dùng quản trị mới có quyền xóa dữ liệu.
 \end{itemize}
+
+% \hspace*{0.5cm}Tính đúng đắn\\
+% \hspace*{0.5cm}Trình phân tích cú pháp xác minh rằng câu lệnh SQL tuân theo ngữ nghĩa SQL, hay các quy tắc, đảm bảo tính đúng đắn của câu lệnh truy vấn. Ví dụ: trình phân tích cú pháp kiểm tra xem lệnh SQL có kết thúc bằng dấu chấm phẩy hay không. Nếu thiếu dấu chấm phẩy, trình phân tích cú pháp sẽ trả về lỗi.\\
+
+% \hspace*{0.5cm}Quyền hạn\\
+% \hspace*{0.5cm}Trình phân tích cú pháp cũng xác thực rằng người dùng đang chạy truy vấn có quyền cần thiết để thao tác với dữ liệu tương ứng. Ví dụ: chỉ người dùng quản trị mới có quyền xóa dữ liệu.\\
 \hspace*{0.5cm}\textbf{Công cụ quan hệ}\\
 \hspace*{0.5cm}Công cụ quan hệ, hay bộ xử lý truy vấn, tạo kế hoạch truy xuất, ghi hoặc cập nhật dữ liệu tương ứng theo cách hiệu quả nhất. Ví dụ: công cụ này kiểm tra các truy vấn tương tự, sử dụng lại các phương pháp thao tác dữ liệu trước đó hoặc tạo một phương pháp mới. Công cụ quan hệ viết kế hoạch trong mã byte, một dạng biểu diễn trung cấp của câu lệnh SQL. Cơ sở dữ liệu quan hệ sử dụng mã byte để thực hiện tìm kiếm và điều chỉnh cơ sở dữ liệu một cách hiệu quả.\\
 \hspace*{0.5cm}\textbf{Công cụ lưu trữ}\\
@@ -105,127 +111,6 @@
 	\vspace{0.5cm}
 	\caption{Các câu lệnh SQL cơ bản}
 \end{figure}
-\subsection{SQLite}
-\subsubsection{SQLite là gì?}
-\hspace*{.5cm}SQLite là hệ quản trị cơ sở dữ liệu (DBMS) quan hệ tương tự như Mysql,  ... Đặc điểm nổi bật của SQLite so với các DBMS khác là gọn, nhẹ, đơn giản, đặt biệt không cần mô hình Server - Client, không cần cài đặt, cấu hình hay khởi động nên không có khái niệm User, Password hay quyền hạn trong SQLite Database. Dữ liệu cũng được lưu ở một file duy nhất.\\
-\hspace*{.5cm} SQLite thường không được sử dụng với các hệ thống lớn nhưng với những hệ thống ở quy mô vừa và nhỏ thì SQLite không thua các DBMS khác về chức năng hay tốc độ. Vì không cần cài đặt hay cấu hình nên SQLite được sử dụng nhiều trong việc phát triển, thử nghiệm vì tránh được những rắc rối trong quá trình cài đặt.
-\subsubsection{Ưu điểm}
-\begin{itemize}
-    \item Giao dịch trong SQLite tuân thủ theo nguyên tắc (ACID) ngay cả sau khi hệ thống treo và mất điện.
-    \item SQLite không cần mô hình Client – Server để hoạt động. Các thao tác dữ liệu trên SQLite chạy nhanh hơn so với các hệ quản trị cơ sở dữ liệu theo mô hình Client – Server.
-    \item SQLite không cần phải cấu hình. SQLite rất đơn giản và dễ dàng sử dụng.
-    \item SQLite hỗ trợ hầu hết các tính năng của ngôn ngữ truy vấn SQL theo chuẩn SQL92.
-    \item Một sở dữ liệu hoàn chỉnh được lưu trữ trong một tệp đa nền tảng duy nhất. Phù hợp với sử dụng dưới dạng định dạng tệp ứng dụng.
-    \item Một sở dữ liệu hoàn chỉnh được lưu trữ trong một tệp đa nền tảng duy nhất. Phù hợp với sử dụng dưới dạng định dạng tệp ứng dụng.
-    \item Đa nền tảng: Android, iOS, Linux, Mac, Solaris, Windows,.. Dễ dàng dịch chuyển sang các hệ thống khác.
-    \item SQLite rất nhỏ gọn, bản đầy đủ các tính năng nhỏ hơn 500kb, và có thể nhỏ hơn nếu lược bớt một số tính năng. Với đặc tính nhỏ gọn, truy xuất dữ liệu nhanh SQLite thường được sử dụng để nhúng vào các dự án.
-\end{itemize}
-\subsubsection{Nhược điểm}
-\begin{itemize}
-    \item Một số tính năng của SQL92 không được hỗ trợ trong SQLite như ALTER DROP COLUMN, ADD CONSTRAINT, RIGHT JOIN, TRIGGER, phân quyền GRANT và REVOKE.
-    \item Vì SQLite không cần cấu hình, cài đặt, không hỗ trợ GRANT và REVOKE nên việc phân quyền truy cập cơ sở dữ liệu chỉ có thể là quyền truy cập file của hệ thống.
-    \item Do sử dụng cơ chế coarse-gained locking nên trong cùng một thời điểm SQLite có thể hỗ trợ nhiều người đọc dữ liệu, nhưng chỉ có 1 người có thể ghi dữ liệu.
-    \item SQLite không phải là lựa chọn hoàn hảo để đáp ứng các nhu cầu xử lý trên một khối lượng dữ liệu lớn, phát sinh liên tục.
-\end{itemize}
-\subsection{Dependency Injection Design Pattern} 
-\subsubsection{Dependency Injection là gì?}
-\hspace*{0.5cm} Dependency Injection Design Pattern là một quá trình trong đó chúng ta tiêm (inject) đối tượng phụ thuộc (dependencies) của một lớp vào một lớp phụ thuộc đối tượng đó. Dependency Injection Design Pattern là mẫu thiết kế được sử dụng phổ biến nhất hiện nay để loại bỏ sự phụ thuộc giữa các đối tượng.\\
-\hspace*{0.5cm} Dependency Injection (DI) là một mẫu thiết kế được sử dụng để triển khai Inversion of Control. Nó cho phép tạo các đối tượng phụ thuộc bên ngoài một lớp và cung cấp các đối tượng đó cho một lớp phụ thuộc vào nó. Mẫu thiết kế DI bao gồm 3 lớp:
-\begin{itemize}
-    \item Lớp Client: Lớp Client (lớp phụ thuộc) là lớp phụ thuộc vào Lớp Service. Điều đó có nghĩa là Lớp Client muốn sử dụng các Dịch vụ (Phương thức) của Lớp Service.
-    \item Lớp Service: Lớp Service (phụ thuộc) là lớp cung cấp các dịch vụ thực tế cho lớp máy khách.
-    \item Lớp Injector: Lớp Injector là lớp đưa đối tượng Lớp dịch vụ vào Lớp máy khách.
-\end{itemize}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{Images/DI_diagram.png}
-    \vspace{0.25cm}
-    \caption{Sơ đồ biểu diễn Dependency Injection}
-\end{figure}
-\hspace*{0.5cm} Như bạn có thể thấy, Lớp Injector tạo một đối tượng của Lớp dịch vụ và inject đối tượng đó vào Lớp Client. Sau đó, Lớp Client sử dụng Đối tượng được inject của Lớp Service để gọi các Phương thức của Lớp Service. Vì vậy, theo cách này, DI tách trách nhiệm tạo đối tượng của lớp Service ra khỏi Lớp Client. 
-\subsubsection{Các loại Dependency Injection}
-\hspace*{0.5cm} Lớp Injector đưa Dependency Object vào Lớp Client theo ba cách khác nhau:
-\begin{itemize}
-    \item Constructor injection: Các dependency (biến phụ thuộc) được cung cấp thông qua constructor (hàm tạo lớp).
-    \item Setter injection: Các dependency sẽ được truyền vào 1 class thông qua các setter method (hàm setter).
-    \item Interface injection: Dependency sẽ cung cấp một Interface, trong đó có chứa hàm có tên là Inject. Các client phải triển khai một Interface mà có một setter method dành cho việc nhận dependency và truyền nó vào class thông qua việc gọi hàm Inject của Interface đó.
-\end{itemize}
-\hspace*{0.5cm} Trong ba kiểu Inject thì phương thức Constructor injection là phổ biến nhất vì tính linh hoạt, mềm dẻo và dễ xây dựng thư viện DI.
-\subsubsection{Ưu và khuyết điểm}
-\hspace*{0.5cm} \textbf{Ưu điểm}
-\begin{itemize}
-    \item Giảm sự kết dính giữa các module.
-    \item Code dễ bảo trì, dễ thay thế module.
-    \item Rất dễ test và viết Unit Test.
-    \item Dễ dàng thấy quan hệ giữa các module (Vì các dependency đều được inject vào constructor).
-\end{itemize}
-\hspace*{0.5cm} \textbf{Khuyết điểm}
-\begin{itemize}
-    \item Các developer mới sẽ gặp khó khăn khi học về DI.
-    \item Sử dụng interface nên đôi khi sẽ khó debug, do không biết chính xác module nào được gọi.
-    \item Các object được khởi tạo toàn bộ ngay từ đầu, có thể làm giảm performance.
-    \item Làm tăng độ phức tạp của code.
-\end{itemize}
-\subsection{Observer Design Pattern}
-\subsubsection{Giới thiệu}
-\begin{itemize}
-    \item Observer Pattern là một mẫu thiết kế thuộc nhóm Behavioral Pattern.
-    \item Định nghĩa mối phụ thuộc một - nhiều giữa các đối tượng để khi mà một đối tượng (subject) có sự thay đổi trạng thái, tất cả các thành phần phụ thuộc của nó (observer) sẽ được thông báo và cập nhật một cách tự động.
-    \item Một đối tượng có thể thông báo đến một số lượng không giới hạn các đối tượng khác.
-\end{itemize}
-\hspace*{0.5cm} Observer Pattern được áp dụng khi:
-\begin{itemize}
-    \item Sự thay đổi trạng thái ở 1 đối tượng có thể được thông báo đến các đối tượng khác mà không phải giữ chúng liên kết quá chặt chẽ.
-    \item Cần mở rộng dự án với ít sự thay đổi nhất.
-\end{itemize}
-\subsubsection{Kiến trúc}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{Images/observer.png}
-    \vspace{0.5cm}
-    \caption{Kiến trúc của Observer Design Pattern}
-\end{figure}
-\hspace*{0.5cm} \textbf{Subject}
-\begin{itemize}
-    \item Biết danh sách không giới hạn các observers của nó.
-    \item Cung cấp một giao diện để có thể thêm và loại bỏ observer.
-\end{itemize}
-\hspace*{0.5cm} \textbf{Observer}
-\begin{itemize}
-    \item Định nghĩa một giao diện cập nhật cho các đối tượng sẽ được subject thống báo đến khi có sự thay đổi trạng thái.
-\end{itemize}
-\hspace*{0.5cm} \textbf{ConcreteSubject}
-\begin{itemize}
-    \item Lưu trữ trạng thái danh sách các ConcreateObserver.
-    \item Gửi thông báo đến các observer của nó khi có sự thay đổi trạng thái.
-\end{itemize}
-\hspace*{0.5cm} \textbf{ConcreteObserver}
-\begin{itemize}
-    \item Có thể duy trì một liên kết đến đối tượng ConcreteSubject.
-    \item Lưu trữ trạng thái của subject.
-    \item Thực thi việc cập nhật để giữ cho trạng thái đồng nhất với subject gửi thông báo đến.
-\end{itemize}
-\hspace*{0.5cm}Khi subject có sự thay đổi trạng thái, nó sẽ duyệt qua danh sách các observer của nó và gọi phương thức cập nhật trạng thái ở từng observer, có thể truyền chính nó vào phương thức để các observer có thể lấy ra trạng thái của nó và xử lý.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{Images/observer_work.png}
-    \vspace{0.5cm}
-    \caption{Tương tác giữa subject và các observer}
-\end{figure}
-\subsubsection{Ưu và nhược điểm}
-\hspace*{.5cm} \textbf{Ưu điểm}
-\begin{itemize}
-    \item Đảm bảo nguyên tắc Open/Closed Principle (OCP): Cho phép thay đổi Subject và Observer một cách độc lập. Chúng ta có thể tái sử dụng các Subject mà không cần tái sử dụng các Observer và ngược lại. Nó cho phép thêm Observer mà không sửa đổi Subject hoặc Observer khác.
-    \item Thiết lập mối quan hệ giữa các objects trong thời gian chạy.
-    \item Sự thay đổi trạng thái ở 1 đối tượng có thể được thông báo đến các đối tượng khác mà không phải giữ chúng liên kết quá chặt chẽ.
-    \item Không giới hạn số lượng Observer
-\end{itemize}
-\hspace*{.5cm} \textbf{Nhược điểm}
-\begin{itemize}
-    \item Unexpected update: Bởi vì các Observer không biết về sự hiện diện của nhau, nó có thể gây tốn nhiều chi phí của việc thay đổi Subject.
-    \item Subscriber được thông báo theo thứ tự ngẫu nhiên.
-\end{itemize}
-
 \subsection{Unity Engine}
 Unity là một trong những engine phát triển game phổ biến nhất hiện nay. Unity cung cấp cho người dùng một nền tảng để tạo ra các trò chơi, ứng dụng 2D và 3D một cách thuận tiện và có hệ thống. Ưu điểm của việc sử dụng engine đó là engine sẽ hỗ trợ sẵn những cơ chế cốt lõi của một trò chơi điện tử bao gồm render đồ họa 2D và 3D, tính toán vật lý và va chạm, âm thanh, animation ...\\
 Ngôn ngữ lập trình được sử dụng cùng với Unity là C\#. C\# là một ngôn ngữ lập trình thuần hướng đối tượng, rất phù hợp với phát triển hệ thống component-based. Điểm mạnh của C\# là cú pháp tuy đơn giản nhưng rất chặt chẽ và linh hoạt, giúp cho nhà phát triển dễ dàng hiện thực những ý tưởng sáng tạo của mình.\\
