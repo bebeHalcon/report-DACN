@@ -234,3 +234,26 @@
 \subsection{Unity Engine và C\#}
 Unity là một trong những engine phát triển game phổ biến nhất hiện nay. Unity cung cấp cho người dùng một nền tảng để tạo ra các trò chơi, ứng dụng 2D và 3D một cách thuận tiện và có hệ thống. Ưu điểm của việc sử dụng engine đó là engine sẽ hỗ trợ sẵn những cơ chế cốt lõi của một trò chơi điện tử bao gồm render đồ họa 2D và 3D, tính toán vật lý và va chạm, âm thanh, animation ...\\
 Ngôn ngữ lập trình được sử dụng cùng với Unity là C\#. C\# là một ngôn ngữ lập trình thuần hướng đối tượng, rất phù hợp với phát triển hệ thống component-based. Điểm mạnh của C\# là cú pháp tuy đơn giản nhưng rất chặt chẽ và linh hoạt, giúp cho nhà phát triển dễ dàng hiện thực những ý tưởng sáng tạo của mình.\\
+\subsection{Thiết kế Database}
+\subsubsection{Dữ liệu, thông tin}
+\hspace*{0.5cm} Dữ liệu là mô tả cơ bản về sự vật, sự kiện, hoạt động và giao dịch được ghi lại, được phân loại, lưu trữ nhưng không được tổ chức để truyền đạt bất kỳ ý nghĩa cụ thể nào.\\
+\hspace*{0.5cm} Những dữ liệu này cần phải được xử lý mới có thể truyền đạt dưới dạng thông tin mà mọi người có thể đọc và hiểu được. Dữ liệu đã được sắp xếp sao cho chúng có ý nghĩa và giá trị đối với người tiếp nhận. Người này sẽ diễn giải ý nghĩa và rút ra kết luận và hàm ý từ thông tin đã được cung cấp. \\
+\hspace*{0.5cm} Nói cách khác, Thông tin là dữ liệu đã được xử lý, sắp xếp và mang bản chất được hướng đến một mục đích nào đó.
+\subsection{Cơ sở dữ liệu (Database)}
+\hspace*{0.5cm} Cơ sở dữ liệu (database) là một tập hợp các dữ liệu liên quan có ý nghĩa ngầm định. Các tính chất được quy định ngầm sẵn mà cơ sở dữ liệu có sẽ là: 
+\begin{itemize}
+	\item Cơ sở dữ liệu đại diện cho một khía cạnh nào đó của thế giới thực, được gọi là thế giới thu nhỏ hoặc vũ trụ diễn ngôn (universe of discourse - UoD). Mọi sự thay đổi trong thế giới thu nhỏ này đề được ánh xạ lên Cơ sở dữ liệu.
+	\item Cơ sở dữ liệu là tập hợp dữ liệu có tính logic chặt chẽ với một số ý nghĩa vốn có. Một tập hợp dữ liệu ngẫu nhiên không thể được gọi chính xác là cơ sở dữ liệu.
+	\item Cơ sở dữ liệu được thiết kế, xây dựng và lấp đầy các dữ liệu cho một mục đích cụ thể. Nó có một nhóm người dùng dự định và một số ứng dụng được hình thành trước mà những người dùng này quan tâm.
+	\item Cơ sở dữ liệu có thể có nhiều kích thước và độ phức tạp khác nhau.
+\end{itemize}
+\subsubsection{Mô hình dữ liệu}
+\hspace*{0.5cm} Theo nghĩa thông thường, mô hình dữ liệu là một loại dữ liệu trừu tượng được sử dụng để cung cấp biểu diễn ý niệm này.\\
+\hspace*{0.5cm} Mô hình dữ liệu sử dụng các khái niệm logic, chẳng hạn như các đối tượng, thuộc tính của chúng và mối quan hệ giữa chúng, có thể dễ hiểu hơn đối với hầu hết người dùng so với các khái niệm lưu trữ máy tính.\\
+\hspace*{0.5cm} Mô hình dữ liệu ẩn các chi tiết lưu trữ và hiện thực mà hầu hết người dùng cơ sở dữ liệu không quan tâm.\\
+\hspace*{0.5cm} Mô hình dữ liệu là sự kết hợp của các thành phần sau:
+\begin{enumerate}
+	\item Một tập hợp các \textbf{kiểu cấu trúc dữ liệu} (các khối xây dựng của bất kỳ cơ sở dữ liệu nào tuân thủ theo mô hình)
+	\item Một tập hợp các \textbf{toán tử hoặc quy tắc suy luận}, có thể được áp dụng cho bất kỳ trường hợp hợp lệ nào của các kiểu dữ liệu được liệt kê trong (1), để truy xuất hoặc lấy dữ liệu từ bất kỳ phần nào của các cấu trúc đó theo bất kỳ kết hợp nào mong muốn
+	\item Một tập hợp các \textbf{quy tắc toàn vẹn chung}, ngầm định hoặc rõ ràng xác định tập hợp các trạng thái cơ sở dữ liệu nhất quán hoặc các thay đổi trạng thái hoặc cả hai. Các quy tắc này đôi khi có thể được thể hiện dưới dạng các quy tắc chèn-cập nhật-xóa
+\end{enumerate}
