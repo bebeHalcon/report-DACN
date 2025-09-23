@@ -43,7 +43,6 @@
 
 \subsection{Các yêu cầu của hệ thống}
 \subsubsection{Yêu cầu chức năng}
-\subsubsection{Yêu cầu chức năng}
 \textbf{Yêu cầu chức năng liên quan đến giao diện trò chơi:}
 \begin{itemize}
 	\item Trò chơi sẽ chơi ở chế độ toàn màn hình.
@@ -91,7 +90,7 @@
 \subsection{Usecase Diagram của Game}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{Images/UseCase.png}
+	\includegraphics[width=14cm]{Images/UCD.jpg}
 	\vspace{0.5cm}
 	\caption{Usecase Diagram của Game}
 \end{figure}
@@ -276,6 +275,191 @@
 		Alternative flow  & Nếu cấp độ người chơi không đủ để trang bị món trang bị, người dùng chọn một vật phẩm khác\\
 		\hline
 		Exceptions  & Game bị crash, dữ liệu màn chơi không hợp lệ.\\
+		\hline
+	\end{tabular}
+\end{center}
+\subsubsection{Use case 8: Open Crates}
+\begin{center}
+	\begin{tabular}{|l|p{12cm}|}
+		\hline
+		ID and Name & UC8: Open Crates \\
+		\hline
+		Actor  & Players \\
+		\hline
+		Description  & Người chơi mở rương kho báu bằng một đơn vị tiền tệ trong game để có cơ hội nhận được các món vật phẩm như vật phẩm tiêu hao, cũng như trang bị theo các phân cấp khác nhau.\\
+		\hline
+		Trigger  & Người chơi nhấn chuột trái vào nút Open Crates và màn hình mở rương hiện ra\\
+		\hline
+		Pre-conditions & Người chơi có đủ đơn vị tiền tệ để mở rương\\
+		\hline
+		Post-conditions & Người chơi nhận được một số trang bị từ việc mở rương\\
+		\hline
+		\multirow{2}{*}{Normal flow}      &\qquad 1. Trên màn hình, người chơi dùng chuột ấn vào nút để mở 1 rương hoặc mở 10 rương để mở số lượng rương theo mong muốn.\\
+		&\qquad 2. Game chạy hiệu ứng mở rương và trả về một hoặc 10 món vật phẩm, sắp xếp theo độ hiếm của vật phẩm\\
+		&\qquad 3. Người chơi ấn Claim để nhận vật phẩm, trở về màn hình mở rương. \\
+		&\qquad 4. Màn hình hiển thị người chơi có số dư đủ để mở 1 hay 10 rương không.\\
+		\hline
+		Alternative flow  & Nếu vật phẩm là trang bị đã được người chơi sở hữu thì sẽ được quy đổi thành một lượng đơn vị tương đương với giá trị vật phẩm. Đồng thời thông báo cho người chơi về việc quy đổi vật phẩm này.\\
+		\hline
+		Exceptions  & Game bị crash, lỗi sao lưu tệp tin save.\\
+		\hline
+	\end{tabular}
+\end{center}
+\subsubsection{Use case 9: Buy Items}
+\begin{center}
+	\begin{tabular}{|l|p{12cm}|}
+		\hline
+		ID and Name & UC9: Buy Items \\
+		\hline
+		Actor  & Players \\
+		\hline
+		Description  & Người chơi dùng đơn vị tiền tệ trong game để mua vật phẩm, như trang bị hoặc vật phẩm tiêu hao\\
+		\hline
+		Trigger  & Người chơi nhấn chuột trái vào nút Market tại màn hình chọn màn chơi\\
+		\hline
+		Pre-conditions & Người chơi vượt qua màn chơi tutorial\\
+		\hline
+		Post-conditions & Người chơi mua được một số vật phẩm\\
+		\hline
+		\multirow{2}{*}{Normal flow}      &\qquad 1. Trên màn hình chọn màn chơi, người chơi ấn vào nút Market, hộp thoại Market bật ra, người chơi chọn tab Buy\\
+		&\qquad 2. Người chơi chọn vật phẩm mong muốn. Nếu là vật phẩm tiêu hao thì chọn số lượng theo yêu cầu\\
+		&\qquad 3. Người chơi ấn Purchase để mua vật phẩm\\
+		&\qquad 4. Màn hình thông báo người chơi đã mua thành công vật phẩm\\
+		\hline
+		Alternative flow  & Nếu người chơi không đủ tiền để mua, hiện thông báo số dư không đủ để mua\\
+		\hline
+		Exceptions  & Game bị crash, lỗi sao lưu tệp tin save khi thêm vật phẩm vào kho đồ.\\
+		\hline
+	\end{tabular}
+\end{center}
+\subsubsection{Use case 10: Sell Items}
+\begin{center}
+	\begin{tabular}{|l|p{12cm}|}
+		\hline
+		ID and Name & UC10: Sell Items \\
+		\hline
+		Actor  & Players \\
+		\hline
+		Description  & Người chơi bán vật phẩm trong kho đồ để nhận lại đơn vị tiền tệ trong game tương ứng với giá trị vật phẩm\\
+		\hline
+		Trigger  & Người chơi nhấn chuột trái vào nút Market tại màn hình chọn màn chơi\\
+		\hline
+		Pre-conditions & Người chơi vượt qua màn chơi tutorial\\
+		\hline
+		Post-conditions & Người chơi bán được một số vật phẩm và nhận lại đơn vị tiền tệ\\
+		\hline
+		\multirow{2}{*}{Normal flow}      &\qquad 1. Trên màn hình chọn màn chơi, người chơi ấn vào nút Market, hộp thoại Market bật ra, người chơi chọn tab Sell\\
+		&\qquad 2. Người chơi chọn vật phẩm trong kho đồ muốn bán. Nếu là vật phẩm tiêu hao hoặc vật phẩm khác thì chọn số lượng theo yêu cầu. Rồi tinh chỉnh giá muốn bán với giá dao động trong khoảng xoay quanh giá trị của những vật phẩm mang đi bán\\
+		&\qquad 3. Người chơi ấn Sell để bán vật phẩm\\
+		&\qquad 4. Màn hình thông báo người chơi đã bán thành công vật phẩm\\
+		\hline
+		Alternative flow  & Nếu NPC không đồng ý với giá bán của người chơi, hiện thông báo người bán không đồng ý với giá bán, người chơi phải chỉnh lại giá bán\\
+		\hline
+		Exceptions  & Game bị crash, lỗi sao lưu tệp tin save khi xoá vật phẩm từ kho đồ hoặc thêm vào giá trị tiền tệ.\\
+		\hline
+	\end{tabular}
+\end{center}
+\subsubsection{Use case 11: Type Query Select}
+\begin{center}
+	\begin{tabular}{|l|p{12cm}|}
+		\hline
+		ID and Name & UC11: Type Query Select \\
+		\hline
+		Actor  & Players \\
+		\hline
+		Description  & Người chơi nhập câu truy vấn select để hiển thị thông tin của bảng được chỉ định.\\
+		\hline
+		Trigger  & Người chơi nhập câu truy vấn select\\
+		\hline
+		Pre-conditions & Người chơi đang trong chiến đấu với quái vật và đến lượt của người chơi\\
+		\hline
+		Post-conditions & Người chơi nhận được kết quả trả về trên màn hình là một bảng\\
+		\hline
+		\multirow{2}{*}{Normal flow}      &\qquad 1. Khi đến lượt của người chơi, người chơi nhập câu truy vấn select với các cột được chỉ định và bảng được chỉ định\\
+		&\qquad 2. Game xử lý câu truy vấn và đưa kết quả ra màn hình\\
+		&\qquad 3. Nếu người chơi đang mở tab có bảng được chỉ định thì sẽ nhảy sang tab đó và hiển thị bảng trên tab. Còn không thì sẽ mở tab là bảng chỉ định và hiển thị bảng trên tab đó. Lượt chơi của người chơi kết thúc.\\
+		\hline
+		Alternative flow  & Nếu câu truy vấn người chơi sử dụng bị sai về cú pháp hoặc có lỗi được phát hiện ở cấp Cơ sở dữ liệu, hệ thống sẽ thông báo câu lệnh sai và người chơi có thể sửa lại câu lệnh\\
+		\hline
+		Exceptions  & Game bị crash, không thể kết nối với cơ sở dữ liệu.\\
+		\hline
+	\end{tabular}
+\end{center}
+\subsubsection{Use case 12: attack/Use query}
+\begin{center}
+	\begin{tabular}{|l|p{12cm}|}
+		\hline
+		ID and Name & UC12: attack/Use Query \\
+		\hline
+		Actor  & Players \\
+		\hline
+		Description  & Người chơi nhập câu truy vấn insert vào bảng attack/use để thực hiện các hành động trong game, game sẽ có các hành vi tương ứng được hiển thị để người chơi nắm được.\\
+		\hline
+		Trigger  & Người chơi nhập câu truy vấn insert vào bảng attack/use\\
+		\hline
+		Pre-conditions & Người chơi đang trong chiến đấu với quái vật và đang ở trong lượt của người chơi.\\
+		\hline
+		Post-conditions & Game hiện ra hành vi tương ứng với hành động người chơi đã thực hiện\\
+		\hline
+		\multirow{2}{*}{Normal flow}      &\qquad 1. Người nhập câu truy vấn insert dữ liệu vào bảng attack/use với các thông số với thứ tự các cột của bảng\\
+		&\qquad 2. Game xử lý câu truy vấn và đưa ra biến đổi của game đối với hành động người chơi đã thực hiện.\\
+		&\qquad 3. Game thông báo kết quả của hành động của người chơi. Có thể thông báo "The attack is super effective/ not very effective", hoặc "Nothing happened" nếu không có gì xảy ra. Lượt chơi của người chơi sau đó kết thúc.\\
+		\hline
+		Alternative flow  & Nếu câu truy vấn người chơi sử dụng bị sai về cú pháp hoặc có lỗi được phát hiện ở cấp Cơ sở dữ liệu, hệ thống sẽ thông báo câu lệnh sai và người chơi có thể sửa lại câu lệnh.\\
+		\hline
+		Exceptions  & Game bị crash, không thể kết nối với cơ sở dữ liệu.\\
+		\hline
+	\end{tabular}
+\end{center}
+\subsubsection{Use case 13: Other query}
+\begin{center}
+	\begin{tabular}{|l|p{12cm}|}
+		\hline
+		ID and Name & UC13: Other Query \\
+		\hline
+		Actor  & Players \\
+		\hline
+		Description  & Người chơi nhập câu truy vấn insert, update, delete vào các bảng khác nhằm các mục đích khác nhau, game sẽ có các phản ứng tương ứng với việc thực hiện truy vấn của người chơi.\\
+		\hline
+		Trigger  & Người chơi nhập câu truy vấn insert/update/delete vào các bảng ngoài attack/use\\
+		\hline
+		Pre-conditions & Người chơi đang trong chiến đấu với quái vật và đang ở trong lượt của người chơi.\\
+		\hline
+		Post-conditions & Game hiện ra hành vi tương ứng với hành động người chơi đã thực hiện\\
+		\hline
+		\multirow{2}{*}{Normal flow}      &\qquad 1. Người nhập câu truy vấn insert/update/delete dữ liệu vào bảng ngoài bảng attack/use.\\
+		&\qquad 2. Game xử lý câu truy vấn và đưa ra biến đổi của game đối với hành động người chơi đã thực hiện theo luật xử lý tương ứng cho từng bảng đã cung cấp.\\
+		&\qquad 3. Game thông báo kết quả của hành động của người chơi. Có thể thông báo lỗi về mặt luật (người chơi không thể thao tác trên bảng này) rồi cho người chơi nhập lại hoặc "Nothing happened" nếu không có gì xảy ra rồi kết thúc lượt của người chơi.\\
+		\hline
+		Alternative flow  & Nếu câu truy vấn người chơi sử dụng bị sai về cú pháp hoặc có lỗi được phát hiện ở cấp Cơ sở dữ liệu, hệ thống sẽ thông báo câu lệnh sai và người chơi có thể sửa lại câu lệnh.\\
+		\hline
+		Exceptions  & Game bị crash, không thể kết nối với cơ sở dữ liệu.\\
+		\hline
+	\end{tabular}
+\end{center}
+\subsubsection{Use case 14: Copy Data}
+\begin{center}
+	\begin{tabular}{|l|p{12cm}|}
+		\hline
+		ID and Name & UC14: Copy Data \\
+		\hline
+		Actor  & Players \\
+		\hline
+		Description  & Người chơi sao chép dữ liệu của một ô hoặc một hàng, và đưa vào clipboard.\\
+		\hline
+		Trigger  & Người chơi nhấn chuột trái lên ô trên bảng hoặc nhấn chuột phải lên ô trên bảng.\\
+		\hline
+		Pre-conditions & Bảng dữ liệu đang hiện trên màn hình\\
+		\hline
+		Post-conditions & Dữ liệu được chép vào clipboard\\
+		\hline
+		\multirow{2}{*}{Normal flow}      &\qquad 1. Người chơi di chuyển chuột đến ô trên bảng, một popup hiện ra toàn bộ nội dung của ô, kèm chỉ dẫn người chơi nhấn chuột trái để sao chép ô hoặc chuột phải để sao chép hàng.\\
+		&\qquad 2. Người chơi ấn chuột theo ý muốn của người chơi, game sao chép nội dung ô hoặc hàng vào clipboard\\
+		&\qquad 3. Game thông báo đã sao chép vào clipboard thành công\\
+		\hline
+		Alternative flow  & \\
+		\hline
+		Exceptions  & Không thể sao chép được vào clipboard do có lỗi xảy ra.\\
 		\hline
 	\end{tabular}
 \end{center}
