@@ -68,6 +68,9 @@ Phần lớn các UI trong trò chơi đều được kế thừa từ class Can
 \end{figure}
 
 \subsubsection{UI tham khảo schema diagram}
+
+Người chơi có thể mở một tab để tham khảo schema diagram của trò chơi và phóng to thu nhỏ tùy ý để tiện quan sát. Từ đó lập những chiến lược hợp lý để đánh bại quái vật và vượt qua màn chơi.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=7cm]{Images/SchemaDiagramView.png}
@@ -82,22 +85,10 @@ Phần lớn các UI trong trò chơi đều được kế thừa từ class Can
 	\caption{Minh họa UI Schema diagram view}
 \end{figure}
 
-\subsubsection{UI cấu trúc màn chơi}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=7cm]{Images/LevelStructureView.png}
-	\vspace{0.5cm}
-	\caption{Level structure view}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=13cm]{Images/LevelStructureUI.png}
-	\vspace{0.5cm}
-	\caption{Minh họa UI cấu trúc màn chơi}
-\end{figure}
-
 \subsubsection{UI tham khảo cú pháp SQL cơ bản}
+
+Cửa sổ tài liệu giúp người chơi tra cứu những câu lệnh SQl cơ bản được giải thích và đưa ra ví dụ minh họa.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=13cm]{Images/DocumentationView.png}
@@ -113,6 +104,9 @@ Phần lớn các UI trong trò chơi đều được kế thừa từ class Can
 \end{figure}
 
 \subsubsection{Hội hội thoại}
+
+UI hộp hội thoại xuất hiện mỗi khi người chơi đụng độ một quái vật trong màn chơi.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=13cm]{Images/DialogueView.png}
@@ -128,6 +122,9 @@ Phần lớn các UI trong trò chơi đều được kế thừa từ class Can
 \end{figure}
 
 \subsubsection{Hiệu ứng pop up text}
+
+Popup text thể hiện sát thương nhận vào hoặc hiệu ứng áp dụng lên người chơi hay quái vật.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=13cm]{Images/PopUpText.png}
@@ -143,6 +140,9 @@ Phần lớn các UI trong trò chơi đều được kế thừa từ class Can
 \end{figure}
 
 \subsubsection{Hộp thoại thông báo}
+
+Hộp thoại thông báo hệ thống.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=13cm]{Images/NotifyBoxView.png}
@@ -155,4 +155,31 @@ Phần lớn các UI trong trò chơi đều được kế thừa từ class Can
 	\includegraphics[width=13cm]{Images/NotifyBoxUI.png}
 	\vspace{0.5cm}
 	\caption{Minh họa UI hộp thoại thông báo}
+\end{figure}
+
+\subsubsection{UI cấu trúc màn chơi}
+
+Mỗi màn chơi là một mê cung, người chơi chỉ biết xuất phát điểm và căn phòng đích đến. Để đến được điểm đích, người chơi phải di chuyển qua nhiều căn phòng khác nhau và những căn phòng này chỉ được lộ diện khi người chơi đã chinh phục căn phòng hiện tại.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=7cm]{Images/LevelStructureView.png}
+	\vspace{0.5cm}
+	\caption{Level structure view}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=13cm]{Images/LevelStructureUI.png}
+	\vspace{0.5cm}
+	\caption{Minh họa UI cấu trúc màn chơi}
+\end{figure}
+
+Để mô phỏng được cấu trúc mê cung của một màn chơi thì nhóm nghiên cứu sử dụng cấu trúc dữ liệu là đồ thị.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=13cm]{Images/LevelStructureManager.png}
+	\vspace{0.5cm}
+	\caption{Level strucutre class diagram}
 \end{figure}
