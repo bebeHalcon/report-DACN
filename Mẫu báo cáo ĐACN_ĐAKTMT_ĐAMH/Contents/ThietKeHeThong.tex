@@ -373,6 +373,69 @@
 \subsubsection{Nhập vào nhiều câu truy vấn}
 \hspace*{0.5cm} Mỗi lượt game chỉ chấp nhận một câu truy vấn từ người chơi. Trong trường hợp người chơi cố tình nhập nhiều câu lệnh theo đúng cấu trúc (các câu lệnh được ngăn cách nhau bằng dấu chấm phẩy ";") thì SQLAnalyzer sẽ phân tách thành các câu lệnh riêng và chọn câu lệnh được nhập vào đầu tiên để xử lý các bước tiếp theo. Đồng thời hiện thông báo người chơi đã nhập nhiều câu truy vấn trong một lượt, cũng như khung nhập câu truy vấn cũng đổi văn bản đã nhập thành câu lệnh đầu tiên.
 \subsection{Thiết kế Class Diagram}
+\subsubsection{IDBObjects}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Images/CD/IDBOCD.drawio.png}
+	\vspace{0.5cm}
+	\caption{ Class Diagram của Cấu trúc IDBObject và các implement của nó}
+\end{figure}
+\subsubsection{Stats}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Images/CD/StatsCD.drawio.png}
+	\vspace{0.5cm}
+	\caption{Class Diagram của Thông số}
+\end{figure}
+\subsubsection{Skills, Trait và MonsterType}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Images/CD/traitCD.drawio.png}
+	\vspace{0.5cm}
+	\caption{Class Diagram của Trait, SKill và MonsterType}
+\end{figure}
+\subsubsection{Entity}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Images/CD/EntityCD.drawio.png}
+	\vspace{0.5cm}
+	\caption{Class Diagram của Entity Manager}
+\end{figure}
+\subsubsection{Player}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Images/CD/PlayerCD.drawio.png}
+	\vspace{0.5cm}
+	\caption{Class Diagram của Player}
+\end{figure}
+\subsubsection{Item System}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Images/CD/ItemCD.drawio.png}
+	\vspace{0.5cm}
+	\caption{Class Diagram của Item System}
+\end{figure}
+\subsubsection{Monster}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Images/CD/monsterCD.drawio.png}
+	\vspace{0.5cm}
+	\caption{Class Diagram của Monster và CriticalPart}
+\end{figure}
+\subsubsection{Combat System}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Images/CD/CombatCD.drawio.png}
+	\vspace{0.5cm}
+	\caption{Class Diagram của Combat System}
+\end{figure}
+\subsubsection{Database System}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Images/CD/DBCD.drawio.png}
+	\vspace{0.5cm}
+	\caption{Class Diagram của Database System}
+\end{figure}
 \subsection{Cấu trúc module chính của Game}
 \begin{figure}[H]
 	\centering
