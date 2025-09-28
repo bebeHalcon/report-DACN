@@ -5,24 +5,35 @@
 \subsubsection{Giai đoạn 1: Thu thập và phân tích yêu cầu nghiệp vụ}
 \hspace*{0.5cm} Căn cứ vào các yêu cầu chức năng, phi chức năng và cơ chế gameplay chính của trò chơi, nhóm cũng thu thập, phân tích và đúc kết được một số yêu cầu cho cơ sở dữ liệu của màn chơi.
 \begin{itemize}
-	\item Thực thể trong màn chơi là thực thể sẽ được tồn tại với một mã định danh (ID) là chuỗi 8 ký tự, bao gồm chữ cái thường hoặc chữ số, đi kèm với đó là tên của thực thể và mô tả của thực thể đó, tên và mô tả có thể không có dữ liệu. Thực thể có thể là Người chơi, Quái vật, bộ phận quái vật, mỗi thực thể không thể mang 2 loại, ví dụ như người chơi không thể là quái vật. Thực thể có thể không là 1 trong 3 loại trên, nó có thể là các vật thể tồn tại trong môi trường của màn chơi và khu vực chiến đấu.
-	\item Người chơi là dạng thực thể sẽ được điều khiển của người dùng. Người chơi gồm trạng thái hiện tại của người chơi, bao gồm HP hiện tại cũng như HP tối đa, cùng cấp độ và Kinh nghiệm hiện tại của người chơi. Người chơi cũng có một bộ Thông số hiện tại, thông số tối đa để người chơi có thể theo dõi. Người chơi cũng có các trạng thái về hiệu ứng hiện tại, bao gồm hiệu ứng lửa, độc, mù, băng, hiệu ứng câu lệnh,.... Người chơi cũng có Inventory chứa các vật phẩm cũng như các slot trang bị dành cho người chơi.
-	\item Vật phẩm của trò chơi là các vật phẩm được sử dụng trong trò chơi và màn chơi. Vật phẩm phải có một mã định danh riêng biệt cho vật phẩm là một chuỗi có 7 kí tự gồm số và chữ cái thường, cùng tên và mô tả, cũng như là độ hiếm của trang bị. Vật phẩm có thể là trang bị, vật phẩm sử dụng được, hoặc không thuộc loại nào. Vật phẩm chỉ có thể là trang bị, hoặc là vật phẩm, không thể vừa là trang bị vừa là vật phẩm tiêu thụ được. Vật phẩm có thể nằm trong Inventory hoặc không, Có thể có nhiều vật phẩm nằm trong Inventory của người chơi.
-	\item Trang bị là một loại vật phẩm, người chơi có các slot trang bị nhất định. Mỗi món trang bị sẽ có từ 1-3 traits, được tổng hợp lại cho người chơi để xét mỗi khi quái vật tấn công hoặc ảnh hưởng của môi trường. Mỗi món trang bị chỉ có thể ở trong kho đồ với số lượng là 1. Các món trang bị có thể thuộc các loại khác nhau nhưng nó vẫn cùng chung một cấu trúc bộ chỉ số. Các món trang bị có các chỉ số cơ bản là cấp độ trang bị hiện tại và yêu cầu cấp độ người chơi để có thể trang bị được món trang bị. Ngoài ra, trang bị cũng mang bộ chỉ số hiện tại. Mỗi món trang bị tồn tại một đòn đánh thường và các kỹ năng (nếu có). Các kỹ năng là riêng biệt với nhau, mỗi kỹ năng phân biệt nhau bằng một chuỗi 6 ký tự theo dạng "Pxxxxx" với x là các chữ số hoặc chữ cái in hoa, một kỹ năng có thể được nhiều trang bị sử dụng. Các kỹ năng này đều có trạng thái hồi kỹ năng, người chơi cần đưa ra các chiến lược sử dụng hợp lý. Các kỹ năng bao gồm tên, mô tả và bộ thông số tính thêm khi sử dụng. Khi thực hiện đòn đánh với kỹ năng, hệ thống sẽ tổng hợp các tham số cơ bản của trang bị và tham số cộng thêm của đòn đánh. Mỗi kỹ năng cũng sẽ có tối đa 2 traits để xét độ hiệu quả của kỹ năng, trait này phải có ít nhất 1 trait trong bộ trait của trang bị.
+	\item Thực thể trong màn chơi là thực thể sẽ được tồn tại với một mã định danh (ID) là chuỗi 8 ký tự, bao gồm chữ cái thường hoặc chữ số, đi kèm với đó là tên của thực thể và mô tả của thực thể đó, tên và mô tả có thể không có dữ liệu. Thực thể có thể là Người chơi, Quái vật, bộ phận quái vật và thực thể khác, mỗi thực thể không thể mang 2 loại, ví dụ như người chơi không thể là quái vật. Thực thể có thể không là 1 trong 3 loại trên, nó có thể là các vật thể tồn tại trong môi trường của màn chơi và khu vực chiến đấu.
+	
+	\item Người chơi là dạng thực thể sẽ được điều khiển của người dùng. Người chơi gồm trạng thái hiện tại của người chơi, bao gồm HP hiện tại cũng như HP tối đa, cùng cấp độ hiện tại của người chơi. Người chơi cũng có một bộ Thông số hiện tại, để người chơi có thể theo dõi. Người chơi cũng có các trạng thái về hiệu ứng hiện tại, bao gồm hiệu ứng lửa, độc, mù, băng, hiệu ứng câu lệnh,.... Người chơi cũng có Inventory chứa các vật phẩm cũng như các slot trang bị dành cho người chơi.
+	
+	\item Vật phẩm của trò chơi là các vật phẩm được sử dụng trong trò chơi và màn chơi. Vật phẩm phải có một mã định danh riêng biệt cho vật phẩm là một chuỗi có 7 kí tự gồm số và chữ cái thường, cùng tên và mô tả. Vật phẩm có thể là trang bị, vật phẩm sử dụng được, hoặc không thuộc loại nào. Vật phẩm chỉ có thể là trang bị, hoặc là vật phẩm, không thể vừa là trang bị vừa là vật phẩm tiêu thụ được. Vật phẩm có thể nằm trong Inventory hoặc không, Có thể có nhiều vật phẩm nằm trong Inventory của người chơi.
+	
+	\item Trang bị là một loại vật phẩm, người chơi có các slot trang bị nhất định. Mỗi món trang bị sẽ có từ 1-3 traits, được tổng hợp lại cho người chơi để xét mỗi khi quái vật tấn công hoặc ảnh hưởng của môi trường. Mỗi món trang bị chỉ có thể ở trong kho đồ với số lượng là 1. Các món trang bị có thể thuộc các loại khác nhau nhưng nó vẫn cùng chung một cấu trúc bộ chỉ số. Các món trang bị có các chỉ số cơ bản là cấp độ trang bị hiện tại và yêu cầu cấp độ người chơi để có thể trang bị được món trang bị. Ngoài ra, trang bị cũng mang bộ chỉ số hiện tại
+	
 	\item Vật phẩm sử dụng được là vật phẩm người chơi có thể sử dụng được, mang lại các lợi ích cho người chơi. Các thông số của món vật phẩm bao gồm: Hồi máu, giảm hiệu ứng, và các thông số tăng cường như tấn công, phòng thủ và nhanh nhẹn.
-	\item Bộ thông số được sử dụng chung cho Người chơi, quái vật, trang bị, kỹ năng quái vật và của trang bị. Cấu trúc khoá bao gồm mã định danh của thực thể, hoặc trang bị, hoặc mã kỹ năng của quái vật, hoặc mã trang bị + index của kỹ năng, và mục đích sử dụng bộ thông số này. Mục đích sử dụng được viết theo dạng xâu, ví dụ như "Current" chỉ thông số hiện tai, "Max" chỉ thông số tối đa, "Modify" chỉ thông số sẽ thay đổi (thường được sử dụng cho các kỹ năng của quái vật và kỹ năng của trang bị được trang bị trong slot). Thông số bao gồm chỉ số tấn công, phòng thủ, nhanh nhẹn và các sát thương hiệu ứng tấn công và kháng hiệu ứng, bao gồm hiệu ứng lửa, độc, mù, băng, hiệu ứng câu lệnh,... Với một chủ và mục đích sử dụng chỉ có duy nhất 1 bộ thông số, các thực thể có thể phải có 1 bộ thông số với các mục đích khác nhau. 
-	\item Quái vật là thực thể, là kẻ thù của người chơi. Quái vật có các thông số về Level, Độ trà trộn sẽ được sử dụng để tạo bản sao. Quái vật vẫn có bộ thông số hiện tại tương tự với bộ thông số đã được đề cập ở trên. Quái vật chỉ thuộc một loại Quái vật, một Loại Quái vật có thể có nhiều quái vật thuộc loại. Loại Quái vật gồm có tên loại là duy nhất. Mỗi Loại quái vật còn đi kèm một bộ gồm một số kỹ năng của quái vật. Mỗi kỹ năng có thể thuộc nhiều loại quái vật khác nhau, mỗi kỹ năng bao gồm mã kỹ năng là duy nhất là một chuỗi gồm 6 ký tự theo dạng "Exxxx", với x là các chữ số hoặc chữ cái viết hoa, tên và mô tả, các khả năng đặc biệt, hồi chiêu chuẩn của kỹ năng cũng như bộ thông số của kỹ năng quái vật. Quái vật có thể chọn một số kỹ năng của loại quái vật làm kỹ năng cho mình (quái vật không nhất thiết phải chọn toàn bộ kỹ năng tương ứng với loại quái vật). Loại Quái vật cũng có tối đa 1 Trait được sử dụng cho việc xét ảnh hưởng của môi trường. Kỹ năng quái vật cũng có một số trait để có thể xét khắc chế khi tấn công người chơi. 
-	\item Mỗi quái vật tồn tại nhờ một số bộ phận chí mạng gắn trên người, các bộ phận chí mạng này có thể là các bộ phận không thuộc quái vật nào. Quái vật nếu không còn bộ phận thật nào còn tồn tại sẽ bị tiêu diệt. Bộ phận chí mạng cũng là một thực thể của trò chơi, nghĩa là nó vẫn có mã định danh, tên và mô tả. Ngoài ra còn các thông số trạng thái như máu hiện tại, máu tối đa, loại bộ phận (có thể là tay súng, giáp, kiếm) hỗ trợ cho việc xác định. Các bộ phận này cũng có từ 1-3 traits để xét khắc chế khi người chơi tấn công. 
+	
+	\item Các kỹ năng có thể được sử dụng bởi Quái vật và cả người chơi, mỗi kỹ năng phân biệt nhau bằng một chuỗi 6 ký tự gồm số và ký tự thường. Quái vật và người chơi đều có trạng thái hồi kỹ năng. Các kỹ năng bao gồm tên, mô tả và bộ thông số tính thêm khi sử dụng. Khi thực hiện đòn đánh với kỹ năng, hệ thống sẽ tổng hợp các tham số cơ bản của trang bị và tham số cộng thêm của đòn đánh, rồi tính thêm chỉ số tấn công phép vào sát thương cuối cùng. Kỹ năng cũng có thể là kỹ năng áp dụng được lên bản thân người thi triển, giúp hồi máu, giảm hiệu ứng hoặc gia tăng các chỉ số. Mỗi kỹ năng cũng sẽ có tối đa 2 traits để xét độ hiệu quả của kỹ năng.
+	
+	\item Bộ thông số được sử dụng chung cho Người chơi, quái vật, trang bị, kỹ năng quái vật và của trang bị. Cấu trúc khoá bao gồm mã định danh của thực thể, hoặc trang bị, hoặc mã kỹ năng của quái vật, hoặc mã trang bị + index của kỹ năng, và mục đích sử dụng bộ thông số này. Mục đích sử dụng được viết theo dạng xâu, ví dụ như "Current" chỉ thông số hiện tai, "Max" chỉ thông số tối đa, "Modify" chỉ thông số sẽ thay đổi (thường được sử dụng cho các kỹ năng của quái vật và kỹ năng của trang bị được trang bị trong slot). Thông số bao gồm chỉ số tấn công, phòng thủ, nhanh nhẹn, sát thương phép, máu tối đa có thể mang lại, thay đổi máu, tỉ lệ chí mạng, khuếch đại chí mạng, hút máu và các sát thương hiệu ứng tấn công và kháng hiệu ứng, bao gồm hiệu ứng lửa, độc, mù, băng. Với một chủ và mục đích sử dụng chỉ có duy nhất 1 bộ thông số, các thực thể có thể phải có 1 bộ thông số với các mục đích khác nhau. 
+	
+	\item Quái vật là thực thể, là kẻ thù của người chơi. Quái vật có các thông số tương tự người chơi, chỉ có điều quái vật không có túi đồ và trang bị. Quái vật vẫn có bộ thông số hiện tại tương tự với bộ thông số đã được đề cập ở trên. Quái vật chỉ thuộc một chủng loại Quái vật, một Loại Quái vật có thể có nhiều quái vật thuộc loại. Loại Quái vật gồm có tên loại là duy nhất. Mỗi Loại quái vật còn đi kèm một bộ gồm một số kỹ năng của quái vật. Cấu trúc kỹ năng tương tự với kỹ năng của người chơi. Mỗi kỹ năng có thể thuộc nhiều loại quái vật khác nhau. Quái vật có thể chọn một số kỹ năng của loại quái vật làm kỹ năng cho mình (quái vật không nhất thiết phải chọn toàn bộ kỹ năng tương ứng với loại quái vật). Loại Quái vật cũng có tối đa 1 Trait được sử dụng cho việc xét ảnh hưởng của môi trường. Kỹ năng quái vật cũng có một số trait để có thể xét khắc chế khi tấn công người chơi. 
+	
+	\item Mỗi quái vật tồn tại nhờ một số bộ phận chí mạng gắn trên người, các bộ phận chí mạng này có thể là các bộ phận không thuộc quái vật nào. Quái vật nếu không còn bộ phận thật nào còn tồn tại sẽ bị tiêu diệt. Bộ phận chí mạng cũng là một thực thể của trò chơi, nghĩa là nó vẫn có mã định danh, tên và mô tả. Ngoài ra còn các thông số trạng thái như máu hiện tại. Các bộ phận này cũng có từ 1-3 traits để xét khắc chế khi người chơi tấn công.
+	
 	\item Traits là loại phẩm chất được sử dụng để xét khắc chế bởi đòn đánh của người chơi, quái vật, ảnh hưởng của môi trường. Trait có thể tồn tại ở bộ phận quái vật, loại quái vật, kỹ năng quái vật, trang bị, kỹ năng trang bị của người chơi. Trait bao gồm tên trait phân biệt, kèm mô tả trait đó. Một trait có thể là khắc chế của 0 hoặc nhiều trait khác, hoặc cũng có thể bị khắc chế của 0 hoặc nhiều trait.
-	\item Để cung cấp clue cho người chơi, ngoài phản ứng của quái vật và hiệu ứng trả về của đòn đánh (Super/Not Really Effective), cơ sở dữ liệu của game cần có các bảng về các thông tin về quái vật như Ngoại hình, hội thoại của quái vật. Ngoại hình của quái vật có khoá bao gồm mã định danh thực thể và category của ngoại hình, kèm với mô tả ngoại hình. Mỗi mã thực thể có một hội thoại riêng. So với tương tác trong game thì các hội thoại và ngoại hình này có thể có sự thay đổi, ví dụ như đổi giá trị, mã hoá, cất bớt một số điểm,...
-	\item Để có thể thực hiện các hành động như tấn công, sử dụng vật phẩm,... Có các bảng hỗ trợ để người chơi có thể đưa các tham số vào. Bảng attack bao gồm các tham số là mã thực thể mục tiêu, mã trang bị sử dụng (cả 2 được gộp thành một khoá, 2 tham số không được null), cùng với index của kỹ năng, nếu index bằng 0 hoặc null nghĩa là sử dụng đòn đánh thường của vũ khí. Bảng use bao gồm mã trang bị. Người chơi cần chèn các tham số vào bảng thì hành động mới có thể được thực thi.
+	\item Để cung cấp clue cho người chơi, ngoài phản ứng của quái vật và hiệu ứng trả về của đòn đánh (Super/Not Really Effective), cơ sở dữ liệu của game cần có các bảng về các thông tin về quái vật như về chủng loại quái vật, traits,.... Ngoại hình của quái vật có khoá bao gồm mã định danh thực thể và category của ngoại hình, kèm với mô tả ngoại hình. Có thể có nhiều clue ứng với mỗi thực thể.
+	
+	\item Để có thể thực hiện các hành động như tấn công, sử dụng chiêu, sử dụng vật phẩm,... Có các bảng hỗ trợ để người chơi có thể đưa các tham số vào. Bảng Attack bao gồm các tham số là mã thực thể mục tiêu, mã trang bị sử dụng (cả mã định danh mục tiêu là khoá), người chơi có thể tấn công bằng trang bị hoặc bằng tay không đều được. Bảng Cast gồm hai thông số là mã kỹ năng sử dụng (đối tượng thi triển phải có kỹ năng mang kỹ năng này), kèm mã định danh của mục tiêu, nếu mục tiêu không có thì được xem là người thi triển muốn dùng kỹ năng cho mình. Bảng use bao gồm mã vật phẩm. Người chơi cần chèn các tham số vào bảng thì hành động mới có thể được thực thi.
 	
 \end{itemize}
 \subsubsection{Giai đoạn 2: Thiết kế ý niệm của cơ sở dữ liệu}
 \hspace*{0.5cm} Một trong những thứ không thể thiếu của game là schema của trò chơi. Người chơi sẽ sử dụng các câu truy vấn SQL để khai thác tối đa SQL, tìm được mục tiêu và tiêu diệt chúng.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{Images/eerd.jpg}
+	\includegraphics[width=\textwidth]{Images/EERD_v3.png}
 	\vspace{0.5cm}
 	\caption{Mô hình thực thể - quan hệ của cơ sở dữ liệu của màn chơi}
 \end{figure}
@@ -60,14 +71,294 @@
 \hspace*{0.5cm} Từ những yêu cầu và cơ sở dữ liệu luận lý, nhóm bắt đầu thiết kế cơ sở dữ liệu luận lý, thể hiện các quan hệ và các ràng buộc về khoá ngoại.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{Images/rm.jpg}
+	\includegraphics[width=\textwidth]{Images/Schemav3.drawio.png}
 	\vspace{0.5cm}
 	\caption{Mô hình quan hệ - cơ sở dữ liệu luận lý trong màn chơi}
 \end{figure}
 
-
-
-
+\subsubsection{Giai đoạn 5: Thiết kế vật lý}
+\hspace*{0.5cm} Từ schema diagram đã thiết kế ở giai đoạn trước, nhóm bắt đầu thiết kế cơ sở dữ liệu vật lý, thể hiện bằng các dòng code tương ứng với Hệ quản trị cơ sở dữ liệu nhóm đang sử dụng (ở đây là SQLite).\\
+\begin{verbatim}
+	DROP TABLE IF EXISTS Attack;
+	DROP TABLE IF EXISTS Use;
+	DROP TABLE IF EXISTS Cast;
+	DROP TABLE IF EXISTS Skills;
+	DROP TABLE IF EXISTS TypeHasSkills;
+	DROP TABLE IF EXISTS LearnedSkills;
+	DROP TABLE IF EXISTS Entities;
+	DROP TABLE IF EXISTS HasTrait;
+	DROP TABLE IF EXISTS Traits;
+	DROP TABLE IF EXISTS TraitAdvOn;
+	DROP TABLE IF EXISTS Knowledge;
+	DROP TABLE IF EXISTS Equipment;
+	DROP TABLE IF EXISTS HasType;
+	DROP TABLE IF EXISTS MonsterType;
+	DROP TABLE IF EXISTS Inventory;
+	DROP TABLE IF EXISTS Stat;
+	DROP TABLE IF EXISTS BattleLog;
+	
+	CREATE TABLE Entities (
+	entityID      TEXT PRIMARY KEY,
+	name          TEXT,
+	description   TEXT,
+	type          TEXT,
+	parentID      TEXT,
+	currentHP REAL,
+	currentMaxHP REAL,
+	level INTEGER,
+	energyIndex REAL,
+	statusFire REAL,
+	statusIce REAL,
+	statusPoison REAL,
+	statusBlind REAL,
+	FOREIGN KEY (parentID) 
+	REFERENCES Entities (entityID) 
+	ON DELETE SET NULL
+	);
+	CREATE TABLE Traits (
+	traitName     TEXT PRIMARY KEY,
+	description   TEXT
+	);
+	CREATE TABLE HasTrait (
+	entityID      TEXT,
+	trait         TEXT,
+	PRIMARY KEY (entityID, trait),
+	FOREIGN KEY (entityID) REFERENCES Entities(entityID) ON DELETE CASCADE,
+	FOREIGN KEY (trait) REFERENCES Traits(traitName) ON DELETE CASCADE
+	);
+	CREATE TABLE TraitAdvOn (
+	traitNameAdv     TEXT,
+	traitNameDisAdv  TEXT,
+	PRIMARY KEY (traitNameAdv, traitNameDisAdv),
+	FOREIGN KEY (traitNameAdv) REFERENCES Traits (traitName)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE,
+	FOREIGN KEY (traitNameDisAdv) REFERENCES Traits (traitName)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
+	);
+	CREATE TABLE IF NOT EXISTS Stat (
+	ownerID TEXT NOT NULL,
+	statType TEXT NOT NULL,
+	atk REAL DEFAULT 0,
+	def REAL DEFAULT 0,
+	magic REAL DEFAULT 0,
+	maxHp REAL DEFAULT 0,
+	hpmod REAL DEFAULT 0,
+	critRate REAL DEFAULT 0,
+	critBuff REAL DEFAULT 0,
+	omnivamp REAL DEFAULT 0,
+	agility REAL DEFAULT 0,
+	atkFire REAL DEFAULT 0,
+	atkIce REAL DEFAULT 0,
+	atkPoison REAL DEFAULT 0,
+	atkBlind REAL DEFAULT 0,
+	resistFire REAL DEFAULT 0,
+	resistIce REAL DEFAULT 0,
+	resistPoison REAL DEFAULT 0,
+	resistBlind REAL DEFAULT 0,
+	PRIMARY KEY (ownerID, statType)
+	);
+	CREATE TABLE Skills (
+	skillID TEXT PRIMARY KEY,
+	skillName TEXT,
+	skillDescription TEXT,
+	skillCooldown INTEGER,
+	skillCost REAL,
+	trait1 TEXT DEFAULT NULL,
+	trait2 TEXT DEFAULT NULL,
+	FOREIGN KEY (trait1) REFERENCES Traits (traitName)
+	ON DELETE SET NULL
+	ON UPDATE CASCADE,
+	FOREIGN KEY (trait2) REFERENCES Traits (traitName)
+	ON DELETE SET NULL
+	ON UPDATE CASCADE
+	);
+	CREATE TABLE Knowledge (
+	entityID     TEXT,
+	clue         TEXT,
+	PRIMARY KEY (entityID, clue),
+	FOREIGN KEY (entityID) REFERENCES Entities(entityID) ON DELETE CASCADE
+	);
+	CREATE TABLE Equipment (
+	itemID       TEXT PRIMARY KEY,
+	name         TEXT,
+	type         TEXT,
+	description  TEXT,
+	level        INTEGER,
+	trait1 TEXT DEFAULT NULL,
+	trait2 TEXT DEFAULT NULL,
+	trait3 TEXT DEFAULT NULL,
+	FOREIGN KEY (trait1) REFERENCES Traits (traitName)
+	ON DELETE SET NULL
+	ON UPDATE CASCADE,
+	FOREIGN KEY (trait2) REFERENCES Traits (traitName)
+	ON DELETE SET NULL
+	ON UPDATE CASCADE,
+	FOREIGN KEY (trait3) REFERENCES Traits (traitName)
+	ON DELETE SET NULL
+	ON UPDATE CASCADE
+	);
+	CREATE TABLE Inventory (
+	itemID       INTEGER PRIMARY KEY,
+	quantity     INTEGER,
+	name         TEXT,
+	description  TEXT,
+	type         TEXT,
+	hpHeal REAL,
+	buffATK REAL,
+	buffDEF REAL,
+	buffAgility REAL,
+	fireEffectReduce REAL,
+	iceEffectReduce REAL,
+	poisonEffectReduce REAL,
+	blindEffectReduce REAL
+	);
+	CREATE TABLE MonsterType (
+	typeName     TEXT PRIMARY KEY,
+	description  TEXT,
+	trait1 TEXT DEFAULT NULL,
+	trait2 TEXT DEFAULT NULL,
+	trait3 TEXT DEFAULT NULL,
+	FOREIGN KEY (trait1) REFERENCES Traits (traitName)
+	ON DELETE SET NULL
+	ON UPDATE CASCADE,
+	FOREIGN KEY (trait2) REFERENCES Traits (traitName)
+	ON DELETE SET NULL
+	ON UPDATE CASCADE,
+	FOREIGN KEY (trait3) REFERENCES Traits (traitName)
+	ON DELETE SET NULL
+	ON UPDATE CASCADE
+	);
+	CREATE TABLE HasType (
+	entityID     TEXT,
+	typeName     TEXT,
+	PRIMARY KEY (entityID),
+	FOREIGN KEY (entityID) REFERENCES Entities(entityID) ON DELETE CASCADE,
+	FOREIGN KEY (typeName) REFERENCES MonsterType(typeName) ON DELETE SET NULL
+	);
+	CREATE TABLE TypeHasSkills (
+	typeName     TEXT,
+	skillID      TEXT,
+	PRIMARY KEY (typeName, skillID),
+	FOREIGN KEY (skillID) REFERENCES Skills(skillID) ON DELETE CASCADE,
+	FOREIGN KEY (typeName) REFERENCES MonsterType(typeName) ON DELETE CASCADE
+	);
+	CREATE TABLE LearnedSkills (
+	entityID     TEXT,
+	skillID      TEXT,
+	state        TEXT,
+	PRIMARY KEY (entityID, skillID),
+	FOREIGN KEY (entityID) REFERENCES Entities(entityID) ON DELETE CASCADE,
+	FOREIGN KEY (skillID) REFERENCES Skills(skillID) ON DELETE CASCADE
+	);
+	
+	CREATE TABLE Attack (
+	targetEntityID TEXT PRIMARY KEY,
+	itemID         TEXT,
+	FOREIGN KEY (targetEntityID) REFERENCES Entities(entityID),
+	FOREIGN KEY (itemID) REFERENCES Equipment(itemID)
+	);
+	CREATE TABLE Use (
+	itemID TEXT PRIMARY KEY,
+	targetEntityID TEXT,
+	FOREIGN KEY (itemID) REFERENCES Inventory(itemID)
+	FOREIGN KEY (targetEntityID) REFERENCES Entities(entityID)
+	);
+	CREATE TABLE Cast (
+	skillID        TEXT PRIMARY KEY,
+	targetEntityID TEXT,
+	FOREIGN KEY (skillID) REFERENCES LearnedSkills(skillID),
+	FOREIGN KEY (targetEntityID) REFERENCES Entities(entityID)
+	);
+\end{verbatim}
+\hspace*{0.5cm} Ngoài ra nhóm còn thiết kế một số trigger phục vụ cho thao tác của người chơi và xử lý của hệ thống
+\begin{verbatim}
+	-- Drop old triggers if they exist
+	DROP TRIGGER IF EXISTS trigger_attack_insert;
+	DROP TRIGGER IF EXISTS trigger_use_insert;
+	DROP TRIGGER IF EXISTS trigger_cast_insert;
+	DROP TRIGGER IF EXISTS trigger_attack_clear;
+	DROP TRIGGER IF EXISTS trigger_use_clear;
+	DROP TRIGGER IF EXISTS trigger_cast_clear;
+	
+	-- Log table
+	CREATE TABLE IF NOT EXISTS log_state (
+	log TEXT PRIMARY KEY
+	);
+	
+	-- Clear Attack before new insert
+	CREATE TRIGGER trigger_attack_clear
+	BEFORE INSERT ON Attack
+	BEGIN
+	DELETE FROM Attack;
+	DELETE FROM log_state;
+	END;
+	
+	-- Clear Use before new insert
+	CREATE TRIGGER trigger_use_clear
+	BEFORE INSERT ON Use
+	BEGIN
+	DELETE FROM Use;
+	DELETE FROM log_state;
+	END;
+	
+	-- Clear Cast before new insert
+	CREATE TRIGGER trigger_cast_clear
+	BEFORE INSERT ON Cast
+	BEGIN
+	DELETE FROM Cast;
+	DELETE FROM log_state;
+	END;
+	
+	-- Validate Attack insert
+	CREATE TRIGGER trigger_attack_insert
+	AFTER INSERT ON Attack
+	FOR EACH ROW
+	WHEN ((SELECT COUNT(*) FROM Attack) > 0 AND (SELECT COUNT(*) FROM log_state) == 0)
+	BEGIN
+	INSERT INTO log_state VALUES (
+	CASE
+	WHEN EXISTS (SELECT * FROM Entities WHERE entityID == NEW.targetEntityID)
+	THEN        'AttackCode_legal_'
+	ELSE 'AttackCode_illegal_'
+	END
+	);
+	--    SELECT RAISE (ABORT, 'action detected');
+	END;
+	
+	-- Validate Use insert
+	CREATE TRIGGER trigger_use_insert
+	AFTER INSERT ON Use
+	FOR EACH ROW
+	WHEN ((SELECT COUNT(*) FROM "Use") > 0 AND (SELECT COUNT(*) FROM log_state) = 0)
+	BEGIN
+	INSERT INTO log_state VALUES (
+	CASE
+	WHEN EXISTS (SELECT 1 FROM Inventory WHERE itemID = NEW.itemID)
+	THEN 'UseCode_legal_'
+	ELSE 'UseCode_illegal_'
+	END
+	);
+	--    SELECT RAISE (ABORT, 'action detected');
+	END;
+	
+	-- Validate Cast insert
+	CREATE TRIGGER trigger_cast_insert
+	AFTER INSERT ON Cast
+	FOR EACH ROW
+	WHEN ((SELECT COUNT(*) FROM Cast) > 0 AND (SELECT COUNT(*) FROM log_state) = 0)
+	BEGIN
+	INSERT INTO log_state VALUES (
+	CASE
+	WHEN EXISTS (SELECT 1 FROM LearnedSkills WHERE skillID = NEW.skillID)
+	THEN 'CastCode_legal_'
+	ELSE 'CastCode_illegal_'
+	END
+	);
+	--    SELECT RAISE (ABORT, 'action detected');
+	END;
+\end{verbatim}
 
 \subsection{Luật xử lý dựa trên hành động của người chơi}
 \hspace*{0.5cm} Trong quá trình chơi, khó mà tránh khỏi việc người chơi có những hành vi cố ý tác động đến schema, nếu không xử lý hợp lý sẽ gây tình trạng màn chơi bị rối loạn, cũng như có thể dẫn đến mất ổn định game. Luôn nhớ rằng Schema chỉ là Playground của game, các object của game chỉ được quản lý bởi hệ thống, nên việc xử lý phải mang tính răn đe, cho người chơi nhớ được mọi hành vi của bản thân đều có thể mang lại hậu quả, tương tự với việc xử lý SQL trong công việc thực tế.\\
@@ -76,57 +367,12 @@
 \subsubsection{Tạo, sửa, xoá bảng, trigger,...}
 \hspace*{0.5cm} Hành vi tạo, sửa, xoá bảng hoặc các trigger của người chơi được xem là hành vi cấm. Song SQLite tích hợp vào Unity không hỗ trợ việc phân quyền và ngăn chặn các hành vi tạo, xoá, sửa bảng ở cấp Hệ quản trị cơ sở dữ liệu, nên việc xử lý này phải được thực hiện ở cấp ứng dụng, tức là game. Với mỗi câu truy vấn người chơi submit cho game, một module tên là SQLAnalyzer sẽ được gọi để kiểm tra xem câu lệnh có chứa các từ khoá như "CREATE", "DROP", "ALTER",... nếu có sẽ gọi báo lỗi và hiện lỗi lên trên màn hình và người chơi được phép nhập lại câu lệnh khác. 
 \subsubsection{Thay đổi trạng thái của bảng}
-Với các bảng khác nhau, sẽ có quy luật để game xử lý khác nhau cho mỗi thao tác, chèn thêm, cập nhật và xoá record trong một bảng nhất định.
-\begin{longtable}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}	
-	\hline
-	\textbf{Tên bảng} & \textbf{Insert} & \textbf{Update} & \textbf{Delete}\\
-	\hline
-	\endhead
+\hspace*{0.5cm} Người chơi có thể tuỳ ý cập nhật, thêm, xoá record vào bất kỳ bảng nào trong Schema. Người dùng tự chịu trách nhiệm cho những gì người chơi đã thực hiện.
+
 	
-	\hline
-	\endfoot
-	
-	\hline
-	Player & Game xoá các record rác & Game cập nhật lại các record bị sai & Game ngăn người chơi xoá record bằng trigger\\
-	\hline
-	Monster & Game giữ lại, không đổi, làm người chơi khó khăn hơn & Game cập nhật lại các record bị sửa & Game cho phép xoá, đổi lại cơ sở dữ liệu không tìm được mục tiêu, người chơi không thể xác định được mục tiêu\\
-	\hline
-	MonsterType & Không cho phép & Không cho phép & Không cho phép\\
-	\hline
-	MonsterSkill & Không cho phép & Không cho phép & Không cho phép\\
-	\hline
-	LearnedMonsterSkill & Cho phép chèn vào nhưng không có ý nghĩa & Cho phép chỉnh sửa nhưng không có ý nghĩa & Cho phép xoá nhưng không có ý nghĩa\\
-	\hline
-	HasMonsterSkill & Không cho phép & Không cho phép & Không cho phép\\
-	\hline
-	MonsterCriticalPart & Cho phép chèn vào nhưng sẽ gây khó cho người chơi & Game cập nhật lại các record bị sửa & Game cho phép xoá, đổi lại cơ sở dữ liệu không tìm được mục tiêu, người chơi không thể xác định được mục tiêu\\
-	\hline
-	Trait & Không cho phép & Không cho phép & Không cho phép\\
-	\hline
-	TraitAdvOn & Không cho phép & Không cho phép & Không cho phép\\
-	\hline
-	Entities & Cho phép chèn vào, không mang lại lợi ích cho người chơi, mà chỉ khiến cho bảng dữ liệu to ra & Không cho phép cập nhật & Cho phép xoá, nếu entity không phải là Player, Monster hay MonsterCriticalPart, vì đó được xem là Environmental Objects. Nếu xoá object trong môi trường có thể kích hoạt hiệu ứng của vật thể đó, hiệu ứng có thể mang lại lợi thế, bất lợi, thậm chí còn mang hậu quả nghiêm trọng.\\
-	\hline 
-	Item & Không cho phép & Không cho phép & Không cho phép\\
-	\hline
-	Equipment & Không cho phép & Không cho phép & Không cho phép\\
-	\hline
-	Skills & Không cho phép & Không cho phép & Không cho phép\\
-	\hline
-	EquipmentSkill & Không cho phép & Không cho phép & Không cho phép\\
-	\hline
-	ConsumableItem & Không cho phép & Không cho phép & Không cho phép\\
-	\hline
-	Inventory, EquipSlot & Cho phép chèn vào. Nhưng cho dù người chơi có chèn vào bao nhiêu record dữ liệu giả rồi sử dụng chúng trong hàm attack hoặc use đều vô hiệu. Schema tìm được ID trong quá trình xử lý câu lệnh nhưng đưa vào hệ thống game để thao tác mà không tìm ID cũng vô nghĩa, hệ thống sẽ thông báo đã không có gì xảy ra và lượt thao tác của người chơi kết thúc. Không như việc ID không đúng thì người chơi vẫn có cơ hội nhập lại, việc thêm ID giả vào sẽ mang lại hậu quả nghiêm trọng hơn cho người chơi. & Game cập nhật lại giá trị về trước khi bị thay đổi bởi người chơi & Cho phép xoá, nhưng sẽ mang lại bất lợi cho người chơi. Khi người chơi thực hiện hàm attack, use thì schema sẽ báo lỗi không tìm thấy id phù hợp, khi đó người chơi đến hết màn chơi không thể sử dụng hoặc tấn công bằng item đó nữa.\\
-	\hline
-	Các bảng Stats & Vẫn chèn đươc, nhưng không có ý nghĩa gì & Vẫn sửa được, không mang lại lợi ích gì & Vẫn xoá được, không mang lại lợi ích gì. \\
-	\hline
-	Các bảng Rumor, Appearance, Dialogue & Vẫn chèn đươc, nhưng không có ý nghĩa gì, có thể gây rối trong việc xác định mục tiêu & Vẫn sửa được, không mang lại lợi ích gì, có thể gây khó khăn cho người chơi & Vẫn xoá được, không mang lại lợi ích gì. Người chơi mất thông tin đó, có thể gây khó khăn vì có thể mất thông tin quan trọng.\\
-	\hline
-	
-\end{longtable}
 \subsubsection{Nhập vào nhiều câu truy vấn}
 \hspace*{0.5cm} Mỗi lượt game chỉ chấp nhận một câu truy vấn từ người chơi. Trong trường hợp người chơi cố tình nhập nhiều câu lệnh theo đúng cấu trúc (các câu lệnh được ngăn cách nhau bằng dấu chấm phẩy ";") thì SQLAnalyzer sẽ phân tách thành các câu lệnh riêng và chọn câu lệnh được nhập vào đầu tiên để xử lý các bước tiếp theo. Đồng thời hiện thông báo người chơi đã nhập nhiều câu truy vấn trong một lượt, cũng như khung nhập câu truy vấn cũng đổi văn bản đã nhập thành câu lệnh đầu tiên.
+\subsection{Thiết kế Class Diagram}
 \subsection{Cấu trúc module chính của Game}
 \begin{figure}[H]
 	\centering

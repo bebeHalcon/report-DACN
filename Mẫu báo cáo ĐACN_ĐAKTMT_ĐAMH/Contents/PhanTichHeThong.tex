@@ -1,6 +1,5 @@
 \section{Phân tích Thiết kế hệ thống}
 
-\subsection{User Stories của Game Player}
 \subsection{User Stories}
 \textbf{User Story về giao diện trò chơi:}
 \begin{itemize}
@@ -31,7 +30,6 @@
 	\item Là một Game Player, tôi muốn có một nơi để tôi có thể ghi lại các ghi chú, gợi ý, hoặc dán nội dung đã sao chép từ bảng dữ liệu ra.
 	\item Là một Game Player, tôi muốn có các animation cho các vật thể tương ứng với các hành động khác nhau, như idle, running, attacking,...
 	\item Là một Game Player, trong trường hợp tôi nhập sai câu lệnh, hệ thống sẽ báo lỗi tôi sai như thế nào và tôi có thể chỉnh sửa lại câu lệnh sau cho đúng. 
-	\item Là một Game Player, có thể chạy code ở cả chế độ chạy toàn bộ chương trình và chế độ debug (chạy từng dòng của chương trình).
 	\item Là một Game Player, tôi muốn xem schema diagram, bản đồ của màn chơi.
 	\item Là một Game Player, tôi muốn có một documentation về ngôn ngữ SQL và có một nút hiển thị để tôi có thể thuận tiện tra cứu.
 	\item Là một Game Player, tôi muốn có một nút tạm dừng trò chơi, cũng như có thể save lại tiến trình màn chơi của tôi.
@@ -43,26 +41,34 @@
 
 \subsection{Các yêu cầu của hệ thống}
 \subsubsection{Yêu cầu chức năng}
-\textbf{Yêu cầu chức năng liên quan đến giao diện trò chơi:}
+\paragraph {Yêu cầu chức năng liên quan đến giao diện trò chơi}
 \begin{itemize}
 	\item Trò chơi sẽ chơi ở chế độ toàn màn hình.
-	\item Nhân vật chính xuất hiện ở màn chơi
 	\item Giao diện trang bị trực quan, chia làm 3 phần: Kho đồ, slot trang bị và thông số người chơi. Có thể dùng chuột để xem thông tin trang bị, cũng như sắp xếp và di chuyển trang bị từ khung trang bị vào kho đồ và ngược lại.
 	\item Giao diện bên ngoài màn chơi gồm bản đồ để chọn mà chơi. Thông tin màn chơi sẽ được hiện lên khi người chơi di chuột đến, cùng với các nút để mở giao diện trang bị và để vào shop để mua bán vật phẩm.
-	\item Giao diện chơi được phân chia rõ ràng các khu vực, bao gồm vùng để chứa điều hướng Tab, thanh nhập câu lệnh, màn hình hiện kết quả trả về, vùng để chứa thông tin người chơi gồm 3 tab Stats, Equipments, Inventory, vùng chiến đấu và vùng giao diện phía trên chứa thông tin màn chơi và 4 nút Map, Schema, Docs, Settings để mở các hộp thoại tương ứng.
-	\item Trong vùng chiến đấu, hiện rõ tên người chơi, tên quái vật và số bộ phần còn lại của quái vật.
-	\item Khi gây sát thương, cần có dòng văn bản hiển thị số sát thương mà nhân vật tấn công gây ra cho đối phương. Sau khi kết thúc đòn đánh, có thể có một hộp thoại thông báo tính hiệu quả đòn đánh, xem đòn đánh có "Effective" hay không,...
-	\item Có hộp thoại chứa schema diagram và bản đồ của màn chơi, giúp người chơi tra cứu.
-	\item Có hộp thoại documentation về ngôn ngữ SQL để người chơi tham khảo.
-	\item Vùng Player trên giao diện có thể hiển thị thông tin về tình trạng hiện tại, trang bị hiện có, những thông tin phải được cập nhật liên tục để người chơi có thể xử lý các nước đi tiếp theo.
-	\item Giao diện bảng record trực quan, các cell dễ nhìn, có thể xem được toàn bộ nội dung cũng như có thể sao chép toàn bộ nội dung của cell, cũng như cũng có thể sao chép toàn bộ hàng. Ngoài ra Có một vùng để điều hướng sang các tab khác, mỗi tab là kết quả bảng trả về, ngoài ra còn có tab Notes cho người chơi ghi các ghi chú trong quá trình chơi.
 	\item Menu của trò chơi gồm có các nút bấm: Play để bắt đầu chơi; Setting để người chơi thiết lập cài đặt trò chơi; Help để hiện giao diện hướng dẫn; Credit để hiển thị thông tin nhà phát hành; Exit để thoát trò chơi.
 	\item Trò chơi có giao diện chuyển đổi người dùng, người chơi có thể thêm, xoá người dùng có phần để hiển thị tên của người chơi. Người chơi có thể tự do thay đổi tên.
 \end{itemize}
 
-\textbf{Yêu cầu chức năng liên quan đến cơ chế chơi:}
+
+\paragraph{Yêu cầu chức năng liên quan đến giao diện màn chơi}
 \begin{itemize}
-	\item Chế độ cốt truyện được chia thành nhiều màn chơi, chia thành các Chapter cho mỗi khu vực lớn trên bản đồ. Mỗi màn chơi sẽ hướng dẫn tôi những cơ chế mới của trò chơi với độ khó tăng dần. Càng đi sâu trong màn chơi độ khó sẽ tăng dần. 
+		\item Giao diện màn chơi được phân chia rõ ràng các khu vực
+		\begin{itemize}
+			\item Vùng giao diện bên dưới chứa các tab là kết quả trả về của các câu truy vấn \textbf{select}, các nút điều hướng tabs, thanh nhập câu lệnh và vùng để chứa thông tin người chơi. Giao diện bảng record trực quan, các cell dễ nhìn, có thể xem được toàn bộ nội dung cũng như có thể sao chép toàn bộ nội dung của cell, cũng như cũng có thể sao chép toàn bộ hàng. Ngoài ra Có một vùng để điều hướng sang các tab khác, mỗi tab là kết quả bảng trả về, ngoài ra còn có tab Notes cho người chơi ghi các ghi chú trong quá trình chơi. Vùng Player trên giao diện có thể hiển thị thông tin về tình trạng hiện tại, trang bị hiện có, những thông tin phải được cập nhật liên tục để người chơi có thể xử lý các nước đi tiếp theo.
+			\item Vùng giao diện bên trên chứa thông tin màn chơi và các nút chức năng.
+			\item Vùng chiến đấu, phía bên trái hiện tên người chơi và số máu còn lại. Phía bên phải hiện tên quái vật và số bộ phần còn lại của quái vật. Cả hai bên đều có hiển thị trạng thái hiệu ứng hiện tại của mỗi thực thể đang chiến đấu
+		\end{itemize}
+		\item Khi gây sát thương, cần có dòng văn bản hiển thị số sát thương mà nhân vật tấn công gây ra cho đối phương (có thể tuỳ từng loại). Sau khi kết thúc đòn đánh, có thể có một hộp thoại thông báo tính hiệu quả đòn đánh, xem đòn đánh có "Effective" hay không,...
+		\item Có hộp thoại chứa schema diagram và bản đồ của màn chơi, giúp người chơi tra cứu.
+		\item Có hộp thoại documentation về ngôn ngữ SQL để người chơi tham khảo.
+	
+\end{itemize}
+
+
+\paragraph{Yêu cầu chức năng liên quan đến cơ chế chơi}
+\begin{itemize}
+	\item Chế độ cốt truyện được chia thành nhiều màn chơi, chia thành các Chapter cho mỗi khu vực lớn trên bản đồ. Mỗi màn chơi sẽ hướng dẫn những cơ chế mới của trò chơi với độ khó tăng dần. Càng đi sâu trong màn chơi độ khó sẽ tăng dần. 
 	\item Người chơi có thể chèn, xoá, cập nhật các bảng trong schema tự do mà không bị lỗi, trừ một số bảng đặc biệt. Đặc biệt là vùng chiến đấu, với các phản ứng của câu lệnh thì vùng chiến đấu sẽ có những hiển thị nhất định để cho người chơi thấy được những gì đã xảy ra sau khi người chơi chạy câu truy vấn.
 	\item Các nhân vật có hoạt hình chuyển động, khi đang đợi lượt đi, khi tấn công, sử dụng vật phẩm, khi bị tấn công và khi bị tiêu diệt.
 	\item Vùng chiến đấu hiển thị cấc thông tin về quái vật, về các phản ứng đòn đánh, về ngoại hình, hộp thoại cần được hiển thị chính xác để người chơi xác định đúng mục tiêu.
@@ -90,376 +96,203 @@
 \subsection{Usecase Diagram của Game}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=14cm]{Images/UCD.jpg}
+	\includegraphics[width=14cm]{Images/overallUCD.png}
 	\vspace{0.5cm}
-	\caption{Usecase Diagram của Game}
+	\caption{Usecase Diagram Tổng quan của Game}
 \end{figure}
-\subsection{Một số Usecase tiêu biểu}
-\subsubsection{Use case 1: Play game}
+
+\hspace*{0.5cm} Người chơi có thể chỉnh sửa thông tin cá nhân của người chơi như tên, mô tả,... Ngoài ra còn có một số chức năng khác được quy định trong các use-case phụ như sau:
+\begin{itemize}
+	\item Chọn màn chơi: người chơi được đưa đến use-case chọn màn chơi, use-case chỉ ra người chơi có thể làm gì trong đó.
+	\item Chơi màn chơi: người chơi sẽ được đưa đến use-case màn chơi, use-case màn chơi chỉ ra người chơi có thể làm được gì trong màn chơi đó.
+	\item Kho đồ: khi người chơi mở kho đồ từ màn hình chọn màn chơi, người chơi sẽ được đưa tới use-case kho đồ, nơi người chơi có thể thao tác với kho đồ và trang bị của mình.
+	\item Cửa hàng: khi người chơi mở cửa hàng từ màn hình chọn màn chơi, người chơi sẽ được đưa tới use-case cửa hàng, nơi người chơi có thể thực hiện các thao tác buôn bán vật phẩm, trang bị.
+	\item Cài đặt: Use-case phụ này mô tả các khả năng của người chơi khi truy cập vào cài đặt, bao gồm điều chỉnh các thông số của trò chơi.
+\end{itemize}
+
+\subsubsection{Kho đồ}
+Use-case cho chức năng kho đồ
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=14cm]{Images/InventoryUCD.png}
+	\vspace{0.5cm}
+	\caption{Usecase Diagram Kho đồ của Game}
+\end{figure}
 \begin{center}
 	\begin{tabular}{|l|p{12cm}|}
 		\hline
-		ID and Name & UC1: Vào game \\
+		ID and Name & UC1: Kho đồ \\
 		\hline
 		Actor  & Người chơi \\
 		\hline
-		Description  & Người chơi\\
+		Description  & Use-case này chỉ các khả năng người chơi khi truy cập trang kho đồ\\
 		\hline
-		Trigger  & Người chơi nhấn chuột trái vào nút Play.\\
+		Trigger  & Người chơi nhấn chuột trái vào nút mở Kho đồ.\\
 		\hline
-		Pre-conditions & \\
+		Pre-conditions & Người chơi hiện đang ở màn hình chính hoặc ở màn hình chọn màn chơi\\
 		\hline
-		Post-conditions  & Màn hình Level Select Map hiện ra\\
+		Post-conditions & Người chơi gắn hoặc gỡ trang bị khỏi kho đồ, hoặc đã thực hiện nâng cấp xong\\
 		\hline
-		\multirow{2}{*}{Normal flow}      &\qquad 1. Hệ thống lấy dữ liệu về màn chơi và profile hiện tại của người chơi.\\
-		&\qquad 2. Hệ thống hiển thị màn hình chọn màn chơi\\
+		\multirow{2}{*}{Normal flow}      &\qquad 1.Người chơi xem thông tin của món vật phẩm hoặc trang bị, bao gồm cấp hiện tại (đối với trang bị), hoặc số lượng đối với (các vật phẩm khác).\\
+		&\qquad 2. Người chơi ấn vào trang bị trong kho đồ, chọn Gắn trang bị (hoặc kéo thả vào ô trang bị mong muốn)\\
+		&\qquad 3. Người chơi ấn Đóng, kết thúc usecase kho đồ\\
 		\hline
-		Alternative flow  & Người chơi lần đầu chơi -> hiện cutscene đầu game\\
+		Alternative flow  & \qquad A1. Tại bước 1, người chơi xem thông tin của trang bị, người chơi có thể nâng cấp trang bị với một xác suất thành công nhất định. Sau khi báo kết quả người chơi được về đầu bước số 1\\
+		&\qquad A2. Tại bước 2, Người chơi có thể gỡ trang bị bằng cách ấn vào trang bị trong slot, chọn Gỡ trang bị. Hoặc kéo từ slot về kho đồ.\\
+		&\qquad A3. Tại bước 2, Nếu người chơi kéo trang bị vào slot đã có trang bị, trang bị trong slot đó sẽ được trả về kho đồ để chọn chỗ cho trang bị được kéo vào\\
 		\hline
-		Exceptions  &\\
-		\hline
-	\end{tabular}
-\end{center}
-\subsubsection{Use case 2: Add User}
-\begin{center}
-	\begin{tabular}{|l|p{12cm}|}
-		\hline
-		ID and Name & UC2: Add User \\
-		\hline
-		Actor  & Players \\
-		\hline
-		Description  & Người chơi \\
-		\hline
-		Trigger  & Người chơi ấn nút Create User\\
-		\hline
-		Pre-conditions & Người chơi đang sử dụng một tài khoản khác \\
-		\hline
-		Post-conditions  & Một người dùng đã được tạo ra.\\
-		\hline
-		\multirow{2}{*}{Normal flow}      &\qquad 1. Hộp thoại nhập tên người dùng được hiện lên\\
-		&\qquad 2. Người dùng nhập tên người dùng và ấn OK\\
-		&\qquad 3. Hệ thống tạo thành công người dùng mới và chuyển quyền truy cập hiện tại sang người chơi mới\\
-		\hline
-		Alternative flow  & Tên người dùng đã có -> hệ thống yêu cầu người dùng nhập tên mới\\
-		\hline
-		Exceptions  & Không thể lưu dữ liệu do không thể ghi vào tệp cần thiết\\
+		Exceptions  & E1. Tại bước 1, người chơi ấn nút đóng để đóng kho đồ. Use-case dừng lại\\
 		\hline
 	\end{tabular}
 \end{center}
-\subsubsection{Use case 3: Rename User}
+\subsubsection{Cửa hàng}
+Use-case cho chức năng cửa hàng
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=14cm]{Images/ShopUCD.png}
+	\vspace{0.5cm}
+	\caption{Usecase Diagram Cửa hàng của Game}
+\end{figure}
 \begin{center}
 	\begin{tabular}{|l|p{12cm}|}
 		\hline
-		ID and Name & UC3: Rename User \\
+		ID and Name & UC2: Cửa hàng \\
 		\hline
-		Actor  & Players \\
+		Actor  & Người chơi \\
 		\hline
-		Description  & Người chơi đổi tên người dùng hiện tại hoặc tên một người dùng khác\\
+		Description  & Use-case này chỉ các khả năng người chơi khi truy cập trang cửa hàng\\
 		\hline
-		Trigger  & Người chơi nhận chuột trái vào tên user trong danh sách và nhấn nút Rename\\
+		Trigger  & Người chơi nhấn chuột trái vào nút mở Cửa hàng.\\
 		\hline
-		Pre-conditions & Người chơi đang có ít nhất một người dùng trong game \\
+		Pre-conditions & Người chơi hiện đang ở màn hình chính hoặc ở màn hình chọn màn chơi\\
 		\hline
-		Post-conditions  & Tên người dùng đã được đổi.\\
+		Post-conditions & Người chơi mua bán vật phẩm thành công\\
 		\hline
-		\multirow{2}{*}{Normal flow}      &\qquad 1. Hộp thoại Rename hiện lên\\
-		&\qquad 2. Người dùng nhập tên người dùng mới và ấn OK\\
-		&\qquad 3. Hệ thống đổi tên thành công người dùng\\
+		\multirow{2}{*}{Normal flow}      &\qquad 1. Người chơi xem thông tin, bao gồm thông tin của các vật phẩm của cửa hàng, các vật phẩm mà người chơi hiện có và số xu của người chơi.\\
+		&\qquad 2. Người chơi ấn vào vật phẩm mà người chơi cần mua hoặc vật phẩm trong kho đồ mà người chơi muốn bán\\
+		&\qquad 3. Người chơi chọn số lượng cần mua/bán và xác nhận\\
+		&\qquad 4. Người chơi ấn Đóng, kết thúc usecase\\
 		\hline
-		Alternative flow  & Tên người dùng đã có -> hệ thống yêu cầu người dùng nhập tên mới\\
+		Alternative flow  & \qquad A1. Sau bước 3, người chơi có thể quay trở lại bước 1 để có thể tiếp tục truy cập cửa hàng\\
+		&\qquad A2. Tại bước 3, Người chơi huỷ xác nhận mua vật phẩm, quay trở lại bước 1.\\
 		\hline
-		Exceptions  & Không thể lưu dữ liệu do không thể ghi vào tệp cần thiết\\
+		Exceptions  & E1. Tại bước 1, người chơi ấn nút đóng để đóng kho đồ. Use-case dừng lại\\
 		\hline
 	\end{tabular}
 \end{center}
-\subsubsection{Use case 4: Delete User}
+\subsubsection{Chọn màn chơi}
+Use-case cho chức năng chọn màn chơi
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=14cm]{Images/LevelChooseUCD.png}
+	\vspace{0.5cm}
+	\caption{Usecase Diagram Chọn màn chơi}
+\end{figure}
 \begin{center}
 	\begin{tabular}{|l|p{12cm}|}
 		\hline
-		ID and Name & UC4: Delete User \\
+		ID and Name & UC3: Chọn màn chơi \\
 		\hline
-		Actor  & Players \\
+		Actor  & Người chơi \\
 		\hline
-		Description  & Người chơi xoá người dùng khi không muốn sử dụng người dùng đó nữa\\
+		Description  & Use-case này chỉ các khả năng người chơi khi người chơi đang ở màn hình chọn màn chơi\\
 		\hline
-		Trigger  & Người chơi nhận chuột trái vào tên user trong danh sách và nhấn nút Delete\\
+		Trigger  & Người chơi nhấn chuột trái vào nút Play ở trang chủ.\\
 		\hline
-		Pre-conditions & Người chơi đang có ít nhất một người dùng trong game \\
+		Pre-conditions & Người chơi hiện đang ở màn hình chính.\\
 		\hline
-		Post-conditions  & Người dùng chỉ định đã được xoá, nếu người dùng bị xoá là người dùng hiện tại, chuyển truy cập game sang người dùng khác. Nếu không còn người dùng nào nữa, hiện hộp thoại Create User.\\
+		Post-conditions & Người chơi vào màn mà mình cần chơi\\
 		\hline
-		\multirow{2}{*}{Normal flow}      &\qquad 1. Hộp thoại xác nhận Delete hiện lên\\
-		&\qquad 2. Người dùng ấn OK\\
-		&\qquad 3. Hệ thống xoá thành công người dùng\\
+		\multirow{2}{*}{Normal flow}      &\qquad 1. Người chơi chọn chương (hoặc vùng đất) đã mở khoá mà người chơi muốn chơi.\\
+		&\qquad 2. Một danh sách các màn chơi của vùng đất mà người chọn được hiện ra. Người chơi nhấn chọn màn chơi đã mở khoá mà người chơi muốn chơi.\\
+		&\qquad 3. Người chơi vào chơi màn chơi, kết thúc use-case\\
 		\hline
-		Alternative flow  & Người dùng nhấn Cancel trong hộp thoại xác nhận, quá trình bị huỷ bỏ\\
+		Alternative flow  & \qquad A1. Tại bước 1, người chơi có thể ấn nút Back để trở lại màn hình chính\\
+		&\qquad A2. Tại bước 2, người chơi có thể quay trở lại để trở lại màn hình chọn chương (vùng đất)\\
+		&\qquad A3. Tại bước 1 và 2, người chơi có thể mở kho đồ, cửa hàng hoặc cài đặt bằng các nút tương ứng\\
 		\hline
-		Exceptions  & Không thể lưu dữ liệu do không thể ghi vào tệp cần thiết\\
+		Exceptions  & \_\\
 		\hline
 	\end{tabular}
 \end{center}
-\subsubsection{Use case 5: Switch User}
+
+\subsubsection{Chơi màn chơi}
+Use-case cho màn chơi
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=14cm]{Images/PlayLevelUCD.png}
+	\vspace{0.5cm}
+	\caption{Usecase Diagram Chơi màn chơi}
+\end{figure}
 \begin{center}
 	\begin{tabular}{|l|p{12cm}|}
 		\hline
-		ID and Name & UC5: Switch User \\
+		ID and Name & UC4: Chơi màn chơi \\
 		\hline
-		Actor  & Players \\
+		Actor  & Người chơi \\
 		\hline
-		Description  & Người chơi chuyển đổi quyền truy cập game sang người dùng khác\\
+		Description  & Use-case này chỉ các khả năng người chơi khi người chơi đang ở trong màn chơi\\
 		\hline
-		Trigger  & Người chơi nhấn chuột trái vào nút Switch User\\
+		Trigger  & Người chơi chọn mở màn chơi từ danh sách màn chơi ở vùng đất mà người chơi đã chọn ở màn hình chọn màn chơi.\\
 		\hline
-		Pre-conditions & \\
+		Pre-conditions & Người chơi mở khoá được màn chơi mình chọn\\
 		\hline
-		Post-conditions  & Người dùng được chuyển sang một người dùng được chỉ định\\
+		Post-conditions & Sau khi người chơi kết thúc màn chơi (thắng hoặc thua), người chơi có thể thoái về màn hình chọn màn chơi hoặc chơi lại màn. 
+		\begin{itemize}
+			\item Nếu người chơi thắng, người chơi được các phần thưởng người chơi đã thu thập được trong màn chơi (bao gồm xu, điểm kinh nghiệm, các món vật phẩm đã thu thập).
+			\item Nếu người chơi thua, người chơi mất tất cả phần thưởng đã thu thập trong màn chơi.
+		\end{itemize}\\
 		\hline
-		\multirow{2}{*}{Normal flow}      &\qquad 1. Hộp thoại danh sách người dùng được hiện lên, đi kèm với tiến trình và các thông tin sơ bộ được hiện lên. \\
-		&\qquad 2. Người dùng chọn người dùng muốn chuyển sang và ấn Switch, hoặc đúp chuột vào người dùng muốn chuyển\\
-		&\qquad 3. Hệ thống chuyển sang người dùng được chỉ định và đưa người chơi về màn hình menu chính\\
+		\multirow{2}{*}{Normal flow}      &\qquad 1. Khi vào màn chơi, người chơi chơi màn chơi mà người chơi đã chọn\\
+		&\qquad 2. Sau khi người chơi kết thúc màn chơi với điều kiện thắng hoặc thua, trò chơi tính toán kết quả và hiển thị thông báo. Nếu thắng thì hiển thị những phần thưởng người chơi được nhận vì đã hoàn thành màn chơi.\\
+		&\qquad 3. Người chơi nhấn chọn thoát màn chơi\\
+		&\qquad 4. Use-case kết thúc, người chơi trở lại màn hình chọn màn chơi\\
 		\hline
-		Alternative flow  & Người dùng nhấn Cancel trong hộp thoại xác nhận, quá trình bị huỷ bỏ\\
+		Alternative flow  & \qquad A1. Tại bước 1, người chơi có thể ấn nút Cài đặt để vào cài đặt\\
+		&\qquad A2. Tại bước 1,  người chơi có thể xem hướng dẫn với nhiều cách khác nhau \begin{itemize}
+			\item Hướng dẫn tự bật lên
+			\item Người chơi ấn vào nút hướng dẫn để hộp thoại hướng dẫn bật lên
+		\end{itemize} Người chơi ấn nút đóng để đóng hướng dẫn và tiếp tục bước 1\\
+		&\qquad A3. Tại bước 3, người chơi ấn chọn chơi lại để chơi màn chơi. Hệ thống đưa người chơi quay trở lại bước 1 với màn chơi không thay đổi và bắt đầu lại từ đầu\\
 		\hline
-		Exceptions  & Không thể load dữ liệu do file lưu bị lỗi\\
+		Exceptions  & \qquad E1. Tại bước A1, người chơi có thể ấn chơi lại hoặc thoát màn chơi giữa chừng. Sau khi xác nhận, hệ thống xử thua người chơi và bước xử lý tiếp theo tương ứng với các hành động người chơi đã thực hiện như sau: \begin{itemize}
+			\item Nếu người chơi thoát màn chơi, người chơi được đưa về màn hình chọn màn chơi, kết thúc use-case
+			\item Nếu người chơi chơi lại, Hệ thống đưa người chơi quay trở lại bước 1 với màn chơi không thay đổi và bắt đầu lại từ đầu.
+		\end{itemize}\\
 		\hline
 	\end{tabular}
 \end{center}
-\subsubsection{Use case 6: Select Level}
+
+\subsubsection{Cài đặt}
+Use-case cho chức năng Cài đặt
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=14cm]{Images/SettingUCD.png}
+	\vspace{0.5cm}
+	\caption{Usecase Diagram Cài đặt}
+\end{figure}
 \begin{center}
 	\begin{tabular}{|l|p{12cm}|}
 		\hline
-		ID and Name & UC6: Select Level \\
+		ID and Name & UC5: Cài đặt \\
 		\hline
-		Actor  & Players \\
+		Actor  & Người chơi \\
 		\hline
-		Description  & Người chơi chọn level muốn chơi\\
+		Description  & Use-case này chỉ các khả năng người chơi khi người chơi truy cập vào cài đặt\\
 		\hline
-		Trigger  & Người chơi nhấn chuột trái vào nút Play Game và đợi quá trình loading hoàn tất\\
+		Trigger  & Người chơi nhấn chuột trái vào nút Cài đặt\\
 		\hline
-		Pre-conditions & Người chơi đã hoàn thành màn chơi tutorial\\
+		Pre-conditions & Nút Cài đặt trong trạng thái có nhấn được.\\
 		\hline
-		Post-conditions  & Màn chơi được chọn được load và hiên trên màn hình, người chơi bắt đầu màn chơi.\\
+		Post-conditions & Người chơi hoàn thành hiệu chỉnh thông số cài đặt\\
 		\hline
-		\multirow{2}{*}{Normal flow}      &\qquad 1. Màn hình bản đồ chọn level hiện lên, gồm nhiều level trải dài trên các vùng trên bản đồ.\\
-		&\qquad 2. Người dùng di chuyển chuột đến nút chọn level, một hộp thoại hiển thị thông tin sơ bộ của màn chơi, với sơ lược màn chơi, thử thách và cấp độ cần thiết của người chơi, cũng như level có chơi được không.\\
-		&\qquad 3. Người chơi click vào nút chọn màn chơi.\\
-		&\qquad 4. Hệ thống load màn chơi được chỉ định, nếu tồn tại tiến trình màn chơi được chỉ định thì sẽ load luôn tiến trình màn chơi, không thì sẽ load màn chơi và bắt đầu từ đầu màn chơi\\
+		\multirow{2}{*}{Normal flow}      &\qquad 1. Người chơi điều chỉnh thông só cài đặt.\\
+		&\qquad 2. Người chơi nhấn nút đóng, kết thúc use-case\\
 		\hline
-		Alternative flow  & Màn chơi không có sẵn hoặc bị khoá. Người dùng chọn một màn chơi khác\\
+		Alternative flow  & \_\\
 		\hline
-		Exceptions  & Game bị crash, dữ liệu màn chơi không hợp lệ hoặc dữ liệu tiến trình của người chơi bị lỗi.\\
-		\hline
-	\end{tabular}
-\end{center}
-\subsubsection{Use case 7: Change Equipment}
-\begin{center}
-	\begin{tabular}{|l|p{12cm}|}
-		\hline
-		ID and Name & UC7: Change Equipment \\
-		\hline
-		Actor  & Players \\
-		\hline
-		Description  & Người chơi đưa trang bị từ Inventory và ngược lại. Người chơi sắp xếp, hoán đổi vị trí trang bị trang bị...\\
-		\hline
-		Trigger  & Người chơi nhấn chuột trái vào nút Inventory và màn hình Inventory hiện ra\\
-		\hline
-		Pre-conditions &\\
-		\hline
-		Post-conditions  & Người chơi hoán đổi vị trí trang bị thành công.\\
-		\hline
-		\multirow{2}{*}{Normal flow}      &\qquad 1. Trên màn hình Equipment và Inventory, người chơi dùng chuột kéo thả món trang bị mình muốn đến ô như mong muốn. Ô mong muốn có thể là ô trang bị cũng như ô trong inventory\\
-		&\qquad 2. Nếu ô được chỉ định không hợp lệ, item được trả về vị trí cũ. Nếu hợp lệ, đưa item đến ô chỉ định\\
-		&\qquad 3. Nếu ô chỉ định có item, tráo đổi vị trí hai item với nhau. Nếu item không phải là trang bị được trỏ đến ô trang bị, trả về vị trí cũ\\
-		&\qquad 4. Cập nhật các thông số mới nếu có sự thay đổi về trang bị.\\
-		\hline
-		Alternative flow  & Nếu cấp độ người chơi không đủ để trang bị món trang bị, người dùng chọn một vật phẩm khác\\
-		\hline
-		Exceptions  & Game bị crash, dữ liệu màn chơi không hợp lệ.\\
-		\hline
-	\end{tabular}
-\end{center}
-\subsubsection{Use case 8: Open Crates}
-\begin{center}
-	\begin{tabular}{|l|p{12cm}|}
-		\hline
-		ID and Name & UC8: Open Crates \\
-		\hline
-		Actor  & Players \\
-		\hline
-		Description  & Người chơi mở rương kho báu bằng một đơn vị tiền tệ trong game để có cơ hội nhận được các món vật phẩm như vật phẩm tiêu hao, cũng như trang bị theo các phân cấp khác nhau.\\
-		\hline
-		Trigger  & Người chơi nhấn chuột trái vào nút Open Crates và màn hình mở rương hiện ra\\
-		\hline
-		Pre-conditions & Người chơi có đủ đơn vị tiền tệ để mở rương\\
-		\hline
-		Post-conditions & Người chơi nhận được một số trang bị từ việc mở rương\\
-		\hline
-		\multirow{2}{*}{Normal flow}      &\qquad 1. Trên màn hình, người chơi dùng chuột ấn vào nút để mở 1 rương hoặc mở 10 rương để mở số lượng rương theo mong muốn.\\
-		&\qquad 2. Game chạy hiệu ứng mở rương và trả về một hoặc 10 món vật phẩm, sắp xếp theo độ hiếm của vật phẩm\\
-		&\qquad 3. Người chơi ấn Claim để nhận vật phẩm, trở về màn hình mở rương. \\
-		&\qquad 4. Màn hình hiển thị người chơi có số dư đủ để mở 1 hay 10 rương không.\\
-		\hline
-		Alternative flow  & Nếu vật phẩm là trang bị đã được người chơi sở hữu thì sẽ được quy đổi thành một lượng đơn vị tương đương với giá trị vật phẩm. Đồng thời thông báo cho người chơi về việc quy đổi vật phẩm này.\\
-		\hline
-		Exceptions  & Game bị crash, lỗi sao lưu tệp tin save.\\
-		\hline
-	\end{tabular}
-\end{center}
-\subsubsection{Use case 9: Buy Items}
-\begin{center}
-	\begin{tabular}{|l|p{12cm}|}
-		\hline
-		ID and Name & UC9: Buy Items \\
-		\hline
-		Actor  & Players \\
-		\hline
-		Description  & Người chơi dùng đơn vị tiền tệ trong game để mua vật phẩm, như trang bị hoặc vật phẩm tiêu hao\\
-		\hline
-		Trigger  & Người chơi nhấn chuột trái vào nút Market tại màn hình chọn màn chơi\\
-		\hline
-		Pre-conditions & Người chơi vượt qua màn chơi tutorial\\
-		\hline
-		Post-conditions & Người chơi mua được một số vật phẩm\\
-		\hline
-		\multirow{2}{*}{Normal flow}      &\qquad 1. Trên màn hình chọn màn chơi, người chơi ấn vào nút Market, hộp thoại Market bật ra, người chơi chọn tab Buy\\
-		&\qquad 2. Người chơi chọn vật phẩm mong muốn. Nếu là vật phẩm tiêu hao thì chọn số lượng theo yêu cầu\\
-		&\qquad 3. Người chơi ấn Purchase để mua vật phẩm\\
-		&\qquad 4. Màn hình thông báo người chơi đã mua thành công vật phẩm\\
-		\hline
-		Alternative flow  & Nếu người chơi không đủ tiền để mua, hiện thông báo số dư không đủ để mua\\
-		\hline
-		Exceptions  & Game bị crash, lỗi sao lưu tệp tin save khi thêm vật phẩm vào kho đồ.\\
-		\hline
-	\end{tabular}
-\end{center}
-\subsubsection{Use case 10: Sell Items}
-\begin{center}
-	\begin{tabular}{|l|p{12cm}|}
-		\hline
-		ID and Name & UC10: Sell Items \\
-		\hline
-		Actor  & Players \\
-		\hline
-		Description  & Người chơi bán vật phẩm trong kho đồ để nhận lại đơn vị tiền tệ trong game tương ứng với giá trị vật phẩm\\
-		\hline
-		Trigger  & Người chơi nhấn chuột trái vào nút Market tại màn hình chọn màn chơi\\
-		\hline
-		Pre-conditions & Người chơi vượt qua màn chơi tutorial\\
-		\hline
-		Post-conditions & Người chơi bán được một số vật phẩm và nhận lại đơn vị tiền tệ\\
-		\hline
-		\multirow{2}{*}{Normal flow}      &\qquad 1. Trên màn hình chọn màn chơi, người chơi ấn vào nút Market, hộp thoại Market bật ra, người chơi chọn tab Sell\\
-		&\qquad 2. Người chơi chọn vật phẩm trong kho đồ muốn bán. Nếu là vật phẩm tiêu hao hoặc vật phẩm khác thì chọn số lượng theo yêu cầu. Rồi tinh chỉnh giá muốn bán với giá dao động trong khoảng xoay quanh giá trị của những vật phẩm mang đi bán\\
-		&\qquad 3. Người chơi ấn Sell để bán vật phẩm\\
-		&\qquad 4. Màn hình thông báo người chơi đã bán thành công vật phẩm\\
-		\hline
-		Alternative flow  & Nếu NPC không đồng ý với giá bán của người chơi, hiện thông báo người bán không đồng ý với giá bán, người chơi phải chỉnh lại giá bán\\
-		\hline
-		Exceptions  & Game bị crash, lỗi sao lưu tệp tin save khi xoá vật phẩm từ kho đồ hoặc thêm vào giá trị tiền tệ.\\
-		\hline
-	\end{tabular}
-\end{center}
-\subsubsection{Use case 11: Type Query Select}
-\begin{center}
-	\begin{tabular}{|l|p{12cm}|}
-		\hline
-		ID and Name & UC11: Type Query Select \\
-		\hline
-		Actor  & Players \\
-		\hline
-		Description  & Người chơi nhập câu truy vấn select để hiển thị thông tin của bảng được chỉ định.\\
-		\hline
-		Trigger  & Người chơi nhập câu truy vấn select\\
-		\hline
-		Pre-conditions & Người chơi đang trong chiến đấu với quái vật và đến lượt của người chơi\\
-		\hline
-		Post-conditions & Người chơi nhận được kết quả trả về trên màn hình là một bảng\\
-		\hline
-		\multirow{2}{*}{Normal flow}      &\qquad 1. Khi đến lượt của người chơi, người chơi nhập câu truy vấn select với các cột được chỉ định và bảng được chỉ định\\
-		&\qquad 2. Game xử lý câu truy vấn và đưa kết quả ra màn hình\\
-		&\qquad 3. Nếu người chơi đang mở tab có bảng được chỉ định thì sẽ nhảy sang tab đó và hiển thị bảng trên tab. Còn không thì sẽ mở tab là bảng chỉ định và hiển thị bảng trên tab đó. Lượt chơi của người chơi kết thúc.\\
-		\hline
-		Alternative flow  & Nếu câu truy vấn người chơi sử dụng bị sai về cú pháp hoặc có lỗi được phát hiện ở cấp Cơ sở dữ liệu, hệ thống sẽ thông báo câu lệnh sai và người chơi có thể sửa lại câu lệnh\\
-		\hline
-		Exceptions  & Game bị crash, không thể kết nối với cơ sở dữ liệu.\\
-		\hline
-	\end{tabular}
-\end{center}
-\subsubsection{Use case 12: attack/Use query}
-\begin{center}
-	\begin{tabular}{|l|p{12cm}|}
-		\hline
-		ID and Name & UC12: attack/Use Query \\
-		\hline
-		Actor  & Players \\
-		\hline
-		Description  & Người chơi nhập câu truy vấn insert vào bảng attack/use để thực hiện các hành động trong game, game sẽ có các hành vi tương ứng được hiển thị để người chơi nắm được.\\
-		\hline
-		Trigger  & Người chơi nhập câu truy vấn insert vào bảng attack/use\\
-		\hline
-		Pre-conditions & Người chơi đang trong chiến đấu với quái vật và đang ở trong lượt của người chơi.\\
-		\hline
-		Post-conditions & Game hiện ra hành vi tương ứng với hành động người chơi đã thực hiện\\
-		\hline
-		\multirow{2}{*}{Normal flow}      &\qquad 1. Người nhập câu truy vấn insert dữ liệu vào bảng attack/use với các thông số với thứ tự các cột của bảng\\
-		&\qquad 2. Game xử lý câu truy vấn và đưa ra biến đổi của game đối với hành động người chơi đã thực hiện.\\
-		&\qquad 3. Game thông báo kết quả của hành động của người chơi. Có thể thông báo "The attack is super effective/ not very effective", hoặc "Nothing happened" nếu không có gì xảy ra. Lượt chơi của người chơi sau đó kết thúc.\\
-		\hline
-		Alternative flow  & Nếu câu truy vấn người chơi sử dụng bị sai về cú pháp hoặc có lỗi được phát hiện ở cấp Cơ sở dữ liệu, hệ thống sẽ thông báo câu lệnh sai và người chơi có thể sửa lại câu lệnh.\\
-		\hline
-		Exceptions  & Game bị crash, không thể kết nối với cơ sở dữ liệu.\\
-		\hline
-	\end{tabular}
-\end{center}
-\subsubsection{Use case 13: Other query}
-\begin{center}
-	\begin{tabular}{|l|p{12cm}|}
-		\hline
-		ID and Name & UC13: Other Query \\
-		\hline
-		Actor  & Players \\
-		\hline
-		Description  & Người chơi nhập câu truy vấn insert, update, delete vào các bảng khác nhằm các mục đích khác nhau, game sẽ có các phản ứng tương ứng với việc thực hiện truy vấn của người chơi.\\
-		\hline
-		Trigger  & Người chơi nhập câu truy vấn insert/update/delete vào các bảng ngoài attack/use\\
-		\hline
-		Pre-conditions & Người chơi đang trong chiến đấu với quái vật và đang ở trong lượt của người chơi.\\
-		\hline
-		Post-conditions & Game hiện ra hành vi tương ứng với hành động người chơi đã thực hiện\\
-		\hline
-		\multirow{2}{*}{Normal flow}      &\qquad 1. Người nhập câu truy vấn insert/update/delete dữ liệu vào bảng ngoài bảng attack/use.\\
-		&\qquad 2. Game xử lý câu truy vấn và đưa ra biến đổi của game đối với hành động người chơi đã thực hiện theo luật xử lý tương ứng cho từng bảng đã cung cấp.\\
-		&\qquad 3. Game thông báo kết quả của hành động của người chơi. Có thể thông báo lỗi về mặt luật (người chơi không thể thao tác trên bảng này) rồi cho người chơi nhập lại hoặc "Nothing happened" nếu không có gì xảy ra rồi kết thúc lượt của người chơi.\\
-		\hline
-		Alternative flow  & Nếu câu truy vấn người chơi sử dụng bị sai về cú pháp hoặc có lỗi được phát hiện ở cấp Cơ sở dữ liệu, hệ thống sẽ thông báo câu lệnh sai và người chơi có thể sửa lại câu lệnh.\\
-		\hline
-		Exceptions  & Game bị crash, không thể kết nối với cơ sở dữ liệu.\\
-		\hline
-	\end{tabular}
-\end{center}
-\subsubsection{Use case 14: Copy Data}
-\begin{center}
-	\begin{tabular}{|l|p{12cm}|}
-		\hline
-		ID and Name & UC14: Copy Data \\
-		\hline
-		Actor  & Players \\
-		\hline
-		Description  & Người chơi sao chép dữ liệu của một ô hoặc một hàng, và đưa vào clipboard.\\
-		\hline
-		Trigger  & Người chơi nhấn chuột trái lên ô trên bảng hoặc nhấn chuột phải lên ô trên bảng.\\
-		\hline
-		Pre-conditions & Bảng dữ liệu đang hiện trên màn hình\\
-		\hline
-		Post-conditions & Dữ liệu được chép vào clipboard\\
-		\hline
-		\multirow{2}{*}{Normal flow}      &\qquad 1. Người chơi di chuyển chuột đến ô trên bảng, một popup hiện ra toàn bộ nội dung của ô, kèm chỉ dẫn người chơi nhấn chuột trái để sao chép ô hoặc chuột phải để sao chép hàng.\\
-		&\qquad 2. Người chơi ấn chuột theo ý muốn của người chơi, game sao chép nội dung ô hoặc hàng vào clipboard\\
-		&\qquad 3. Game thông báo đã sao chép vào clipboard thành công\\
-		\hline
-		Alternative flow  & \\
-		\hline
-		Exceptions  & Không thể sao chép được vào clipboard do có lỗi xảy ra.\\
+		Exceptions  & \qquad E1. Trong bước 2, Người chơi nhấn nút thoát màn chơi và xác nhận chọn thoát, hệ thống xử thua, đưa người chơi về màn hình chọn màn chơi và kết thúc use-case\\
+		&\qquad E2. Trong bước 2, Người chơi nhấn nút chơi lại màn chơi và xác nhận chọn chơi lại, hệ thống xử thua, đưa người chơi vào chơi lại màn chơi, kết thúc use-case\\
 		\hline
 	\end{tabular}
 \end{center}
